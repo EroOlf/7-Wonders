@@ -1,0 +1,1 @@
+-> Initialiser les élements de la table
