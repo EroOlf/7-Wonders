@@ -1,5 +1,5 @@
 module com.example.the7wonders {
-    requires javafx.controls;
+   // requires javafx.controls;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
