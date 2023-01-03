@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Game {
     private static Game context;
+    private static Table table = new Table();
     private static int nbPlayers;
     private static List<Player> players = new ArrayList<>();
 
@@ -31,6 +32,10 @@ public class Game {
         return players;
     }
 
+    public Table getTable(){
+        return table;
+    }
+
     public void createPlayers(String name, Wonder wonder){
         try{
             players.add(new Player(name, wonder));
@@ -46,6 +51,9 @@ public class Game {
         }
     }
 
+    public void shuffleCentralDeck(){
+        Collections.shuffle(table.getCentralDeck());
+    }
 
 
     public void shuffleDeck(Player p){
