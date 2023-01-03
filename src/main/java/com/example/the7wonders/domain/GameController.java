@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameController {
@@ -19,7 +20,7 @@ public class GameController {
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
-    private static List<CardType> centralDeck;
+    private static List<CardType> centralDeck = new ArrayList<>();
 
     private static int currentPlayer = 0;
     private static final int nbPlayers = Game.getContext().getNbPlayers();

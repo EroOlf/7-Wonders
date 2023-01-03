@@ -19,6 +19,7 @@ public class Table {
     public Table(){
         List<CardDecks.CardTypeQuantity> temp = new ArrayList<>();
         temp = CardDecks.deckCardQuantities_Extra;
+        centralDeck = new ArrayList<>();
         for(CardDecks.CardTypeQuantity c : temp){
             for(int i = 0; i < c.quantity; ++i){
                 centralDeck.add(c.cardType);
