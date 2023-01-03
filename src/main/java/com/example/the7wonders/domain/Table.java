@@ -1,5 +1,6 @@
 package com.example.the7wonders.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
@@ -14,4 +15,18 @@ public class Table {
     //Chaaaaaaaaat
 
 
+
+    public Table(){
+        List<CardDecks.CardTypeQuantity> temp = new ArrayList<>();
+        temp = CardDecks.deckCardQuantities_Extra;
+        for(CardDecks.CardTypeQuantity c : temp){
+            for(int i = 0; i < c.quantity; ++i){
+                centralDeck.add(c.cardType);
+            }
+        }
+    }
+
+    public List<CardType> getCentralDeck(){
+        return centralDeck;
+    }
 }
