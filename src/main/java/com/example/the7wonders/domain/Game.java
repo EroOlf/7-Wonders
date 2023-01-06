@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Game {
     private static Game context;
-    private static Table table = new Table();
+    private static Table table = Table.getTable();
     private static int nbPlayers;
     private static List<Player> players = new ArrayList<>();
 

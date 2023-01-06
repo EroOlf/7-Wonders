@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
+    private static Table table = new Table();
     // Deck central
     private List<CardType> centralDeck;
     // Tokens sciences
@@ -14,9 +15,11 @@ public class Table {
 
     //Chaaaaaaaaat
 
+    public static Table getTable(){
+        return table;
+    }
 
-
-    public Table(){
+    private Table(){
         List<CardDecks.CardTypeQuantity> temp = new ArrayList<>();
         temp = CardDecks.deckCardQuantities_Extra;
         centralDeck = new ArrayList<>();

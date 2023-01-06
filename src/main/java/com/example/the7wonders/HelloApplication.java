@@ -27,13 +27,13 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        Player p1 = new Player("Lucas", Wonder.Alexandrie);
+       /* Player p1 = new Player("Lucas", Wonder.Alexandrie);
         System.out.println(p1.getWonder().displayName);
         System.out.println(CardBack.Alexandrie);
         List<CardDecks.CardTypeQuantity> wonderDeck = CardDecks.deckCardQuantities_Alexandrie;
         for(CardDecks.CardTypeQuantity cd : wonderDeck){
             System.out.println(cd.cardType);
-        }
+        } */
         launch();
     }
 }

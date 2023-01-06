@@ -105,10 +105,12 @@ public class InitializationController {
                 if(currentNbPlayer < nbPlayer){
                     root.getChildren().clear();
                     choice();
+                    System.out.println("Joueur suivant");
                 } else{
                     // Lancer la page de jeu
                     Game.getContext().associateNeighbors();
                     GameController.initializeGame();
+                    System.out.println("Lancement du plateau de jeu");
                 }
             }
         });
