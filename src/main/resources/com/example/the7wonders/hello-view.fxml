@@ -8,24 +8,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="544.0" fitWidth="713.0" pickOnBounds="true">
+      <ImageView fitHeight="544.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/backgrounds/background.png" />
          </image>
       </ImageView>
-      <VBox fx:id="rootVBox" alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0" style="-fx-background-image: url(&quot;com.example.the7wonders/images/backgrounds/background.png&quot;); -fx-background-size: cover, auto;">
+      <VBox alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
          <children>
-            <Label fx:id="welcomeText" />
-            <Slider fx:id="nbPlayersSlider" blockIncrement="1" layoutX="26.0" layoutY="32.0" majorTickUnit="1" max="7" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
-            <Button blendMode="SRC_ATOP" cache="true" contentDisplay="TOP" onAction="#onHelloButtonClick" text="Submit!" />
-            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButton" text="QUITTEZ" textAlignment="CENTER"/>
+            <ImageView fitHeight="94.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/backgrounds/icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="welcomeText" text="Bienvenue dans 7 Wonders Architects">
+               <font>
+                  <Font name="Cochin" size="24.0" />
+               </font></Label>
+            <Slider fx:id="nbPlayersSlider" blockIncrement="1" layoutX="26.0" layoutY="32.0" majorTickUnit="1" max="7" minorTickCount="1" prefHeight="27.0" prefWidth="324.0" showTickLabels="true" showTickMarks="true" />
+            <Button onAction="#onHelloButtonClick" text="Submit!">
+               <font>
+                  <Font name="Cochin" size="14.0" />
+               </font></Button>
          </children>
       </VBox>
    </children>
