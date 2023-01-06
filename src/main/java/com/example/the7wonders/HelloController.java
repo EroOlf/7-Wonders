@@ -13,7 +13,7 @@ public class HelloController {
     private Slider nbPlayersSlider;
 
     @FXML
-    protected void onHelloButtonClick() {
+    public void onHelloButtonClick() {
         Game.getContext().setNbPlayers(Integer.parseInt(welcomeText.getText()));
         InitializationController.launch();
     }
