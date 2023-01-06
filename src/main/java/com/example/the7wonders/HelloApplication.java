@@ -1,9 +1,6 @@
 package com.example.the7wonders;
 
-import com.example.the7wonders.domain.CardBack;
-import com.example.the7wonders.domain.CardDecks;
-import com.example.the7wonders.domain.Game;
-import com.example.the7wonders.domain.Wonder;
+import com.example.the7wonders.domain.game.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

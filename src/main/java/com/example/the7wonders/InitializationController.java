@@ -1,8 +1,9 @@
 package com.example.the7wonders;
 
-import com.example.the7wonders.domain.Game;
-import com.example.the7wonders.domain.GameController;
-import com.example.the7wonders.domain.Wonder;
+
+import com.example.the7wonders.domain.controllers.GameController;
+import com.example.the7wonders.domain.game.Game;
+import com.example.the7wonders.domain.wonder.Wonder;
 import javafx.beans.property.SimpleMapProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -1,6 +1,8 @@
 package com.example.the7wonders;
 
-import com.example.the7wonders.domain.*;
+import com.example.the7wonders.domain.cards.CardDecks;
+import com.example.the7wonders.domain.cards.CardType;
+import com.example.the7wonders.domain.wonder.Wonder;
 
 import java.util.ArrayList;
 import java.util.List;
