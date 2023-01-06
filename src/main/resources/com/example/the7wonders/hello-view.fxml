@@ -12,12 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.HelloController">
    <children>
-      <ImageView fitHeight="544.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="544.0" fitWidth="713.0" pickOnBounds="true">
          <image>
             <Image url="@images/backgrounds/background.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0">
+      <VBox fx:id="rootVBox" alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0" style="-fx-background-image: url(&quot;com.example.the7wonders/images/backgrounds/background.png&quot;); -fx-background-size: cover, auto;">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -25,6 +25,7 @@
             <Label fx:id="welcomeText" />
             <Slider fx:id="nbPlayersSlider" blockIncrement="1" layoutX="26.0" layoutY="32.0" majorTickUnit="1" max="7" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
             <Button blendMode="SRC_ATOP" cache="true" contentDisplay="TOP" onAction="#onHelloButtonClick" text="Submit!" />
+            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButton" text="QUITTEZ" textAlignment="CENTER"/>
          </children>
       </VBox>
    </children>
