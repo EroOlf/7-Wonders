@@ -1,1 +1,4 @@
--> Initialiser les élements de la table
+-> Initialiser le joueur et quand il choisit une carte, sa carte va dans son jeu de cartes
+
+
+// Modification dans GameController

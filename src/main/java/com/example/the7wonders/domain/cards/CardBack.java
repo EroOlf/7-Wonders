@@ -1,4 +1,6 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.cards;
+
+import com.example.the7wonders.domain.wonder.Wonder;
 
 public enum CardBack {
 

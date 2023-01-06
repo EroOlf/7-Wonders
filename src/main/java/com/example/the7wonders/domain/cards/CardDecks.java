@@ -1,4 +1,4 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.cards;
 
 import java.util.Arrays;
 import java.util.List;
