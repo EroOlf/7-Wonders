@@ -33,13 +33,17 @@
                   <Font name="Cochin" size="24.0" />
                </font></Label>
             <Slider fx:id="nbPlayersSlider" blockIncrement="1" layoutX="26.0" layoutY="32.0" majorTickUnit="1" max="7" minorTickCount="1" prefHeight="27.0" prefWidth="324.0" showTickLabels="true" showTickMarks="true" style="-fx-font: bold 20 pt;" />
-            <Button onAction="#onHelloButtonClick" style="-fx-background-color: #A88038;" text="Submit!" textFill="WHITE">
+            <Button onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #A88038;" text="Submit!" textFill="WHITE">
                <font>
                   <Font name="Cochin" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></Button>
+            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButton" style="-fx-background-color: #A88038;" text="QUITTEZ" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cochin" size="11.0" />
+               </font></Button>
          </children>
       </VBox>
    </children>
