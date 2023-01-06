@@ -1,4 +1,10 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.game;
+
+import com.example.the7wonders.domain.cards.CardDecks;
+import com.example.the7wonders.domain.cards.CardType;
+import com.example.the7wonders.domain.tokens.ConflictTokens;
+import com.example.the7wonders.domain.tokens.ProgressTokens;
+import com.example.the7wonders.domain.tokens.Tokens;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,12 +13,10 @@ public class Table {
     private static Table table = new Table();
     // Deck central
     private List<CardType> centralDeck;
-    // Tokens sciences
-    private ProgressTokens tokens;
-    // Conflict Tokens
+    /*private ProgressTokens tokens;
     private final int nbConflictTockens = 4;
-    private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];
-
+    private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
+    private List<Tokens> tokens;
     //Chaaaaaaaaat
 
     public static Table getTable(){

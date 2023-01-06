@@ -1,11 +1,11 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.tokens;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ProgressTokens {
+public class ProgressTokens extends Tokens{
 
 	public static final List<ProgressToken> TOKENS = Collections.unmodifiableList(createTokenList());
 	

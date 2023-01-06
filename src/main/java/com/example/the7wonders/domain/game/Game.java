@@ -1,9 +1,8 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.game;
 
-import com.example.the7wonders.Player;
+import com.example.the7wonders.domain.wonder.Wonder;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

@@ -1,7 +1,9 @@
-package com.example.the7wonders.domain;
+package com.example.the7wonders.domain.controllers;
 
 import com.example.the7wonders.HelloApplication;
-import com.example.the7wonders.Player;
+import com.example.the7wonders.domain.game.Player;
+import com.example.the7wonders.domain.cards.CardType;
+import com.example.the7wonders.domain.game.Game;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -45,6 +47,8 @@ public class GameController {
         for(Player p : players){
             Game.getContext().shuffleDeck(p);
         }
+        // Initialiser les joueurs
+        displayPlayers();
         // Intialiser le deck central
         displayCentralDeck();
         // Initialiser les jetons
@@ -52,6 +56,9 @@ public class GameController {
         // Initialiser le
     }
 
+    private static void displayPlayers(){
+
+    }
     private static void displayCentralDeck(){
         System.out.println("Display Central Deck");
         Image imageQuestion = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
