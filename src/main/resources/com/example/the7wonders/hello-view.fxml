@@ -13,12 +13,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.HelloController">
    <children>
-      <ImageView fitHeight="544.0" fitWidth="713.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" >
          <image>
             <Image url="@images/backgrounds/background.png" />
          </image>
       </ImageView>
-      <VBox fx:id="rootVBox" alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0">
+      <VBox fx:id="rootVBox" alignment="CENTER" layoutX="85.0" layoutY="40.0" prefHeight="320.0" prefWidth="430.0" spacing="20.0" style="-fx-background-image: url(&quot;images/backgrounds/background.png&quot;); -fx-background-size: cover, auto;">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
