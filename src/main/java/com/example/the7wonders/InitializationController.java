@@ -67,7 +67,7 @@ public class InitializationController {
         root.setBackground(bg);
 
 
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root, 780, 450);
 
 
        // Scene scene = new Scene(root, 800, 600);
