@@ -1,6 +1,8 @@
-package com.example.the7wonders;
+package com.example.the7wonders.domain.controllers;//package com.example.the7wonders;
 
-import com.example.the7wonders.domain.Game;
+//import com.example.the7wonders.domain.Game;
+import com.example.the7wonders.domain.controllers.InitializationController;
+import com.example.the7wonders.domain.game.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
