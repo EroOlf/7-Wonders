@@ -4,12 +4,11 @@ package com.example.the7wonders;
 import com.example.the7wonders.domain.controllers.GameController;
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.wonder.Wonder;
-import javafx.beans.property.SimpleMapProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -50,7 +49,8 @@ public class InitializationController {
     private static Wonder wonder;
 
     public static void launch(){
-       // Scene scene = new Scene(root, 600, 600);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
+      // Scene scene = new Scene(root, 600, 600);
 
         //background avec couleur et contour
         BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
@@ -58,7 +58,7 @@ public class InitializationController {
         Background bg = new Background(bgFill, bgFill2);
         root.setBackground(bg);
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 600, 600);
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
         HelloApplication.stage.setTitle("Choose a Wonder and a name");
         HelloApplication.stage.setScene(scene);
@@ -78,11 +78,12 @@ public class InitializationController {
     }
 
     public static void choice(){
+
         root.getChildren().addAll(descriptionText, pseudo, validationButton, errorText);
-        descriptionText.setText("Joueur numéro " + currentNbPlayer + " doit choisir un nom et une merveille !");
+        descriptionText.setText("  Joueur numéro " + currentNbPlayer + " doit choisir un nom et une merveille !");
         wonder = null;
         for(Wonder w : availableWonders){
-            Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 150,100 ,false,true);
+            Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 80,100 ,false,true);
             ImageView imageView = new ImageView(image);
             imageWonders.add(imageView);
             Button button = new Button("Choose");
