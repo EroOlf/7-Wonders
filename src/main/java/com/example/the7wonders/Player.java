@@ -3,6 +3,10 @@ package com.example.the7wonders;
 import com.example.the7wonders.domain.cards.CardDecks;
 import com.example.the7wonders.domain.cards.CardType;
 import com.example.the7wonders.domain.wonder.Wonder;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +19,23 @@ public class Player {
     private Wonder wonder;
     private List<CardType> wonderDeck;
 
+    private static FlowPane root = new FlowPane();
+
+//essai ne fonctionne pas pour ajouter le fond sur la 3 e page
+    //public static void launch(){
+        //BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
+        //BackgroundFill bgFill2 = new BackgroundFill(Color.valueOf("#DECBAA"), new CornerRadii(10), new Insets(10));
+        //Background bg = new Background(bgFill, bgFill2);
+        //root.setBackground(bg);
+
+        //Scene scene = new Scene(root, 800, 800);
+        ////scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
+        //HelloApplication.stage.setScene(scene);
+        //HelloApplication.stage.show();
+   // }
+
     public Player(String name, Wonder wonder) throws Exception {
+
         this.name = name;
         this.voisinDroite = null;
         this.voisinGauche = null;

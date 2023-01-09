@@ -32,5 +32,6 @@ public class HelloApplication extends Application {
             System.out.println(cd.cardType);
         } */
         launch();
+
     }
 }
