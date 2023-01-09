@@ -22,7 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
+import javafx.scene.text.Font;
 
 
 import java.util.ArrayList;
@@ -58,7 +58,6 @@ public class InitializationController {
     public static void launch(){
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
-      // Scene scene = new Scene(root, 600, 600);
 
         //background avec couleur et contour
         BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
@@ -69,8 +68,7 @@ public class InitializationController {
 
         Scene scene = new Scene(root, 780, 450);
 
-
-       // Scene scene = new Scene(root, 800, 600);
+        //anciennement :  Scene scene = new Scene(root, 800, 600);
 
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
         HelloApplication.stage.setTitle("Choose a Wonder and a name");
@@ -79,7 +77,6 @@ public class InitializationController {
 
         // espace vertical
         root.setVgap(25);
-
 
         // Réflechir à juste faire un tableau
         availableWonders = new ArrayList<>();
@@ -100,12 +97,19 @@ public class InitializationController {
     public static void choice(){
 
         root.getChildren().addAll(descriptionText, pseudo, validationButton, errorText);
-        descriptionText.setText("  Joueur numéro " + currentNbPlayer + " doit choisir un nom et une merveille !");
+        root.setPadding(new Insets(25,5,0,5));
+        descriptionText.setText("    Joueur numéro " + currentNbPlayer + " doit choisir un nom et une merveille !");
+        descriptionText.setTextFill(Color.valueOf("#8a6227"));
+        descriptionText.setFont(Font.font("Cochin", 18));
+
         wonder = null;
         for(Wonder w : availableWonders){
-            Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 80,100 ,false,true);
+            Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 100,100 ,true,true);
             ImageView imageView = new ImageView(image);
             imageWonders.add(imageView);
+            imageView.setPreserveRatio(true);
+            imageView.setFitWidth(300);
+            imageView.setFitHeight(150);
 
             //un effet de drop Shadow
             DropShadow ds = new DropShadow();
@@ -114,9 +118,11 @@ public class InitializationController {
             ds.setRadius(6.0);
             ds.setColor(Color.valueOf("#8a6227"));
 
+            //button CHOOSE
             Button button1 = new Button("Choose");
+            button1.setFont(Font.font("Cochin",13));
             button1.setEffect(ds);
-
+            button1.setTextFill(Color.valueOf("#8a6227"));
             button1.setPrefSize(80, 30);
             button1.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
             button1.getStyleClass().add("button1");
@@ -130,6 +136,15 @@ public class InitializationController {
             });
             buttonWonders.add(button1);
             root.getChildren().addAll(imageView, button1);
+
+            //button SUBMIT
+            validationButton.setFont(Font.font("Cochin",15));
+            validationButton.setEffect(ds);
+            validationButton.setTextFill(Color.valueOf("#8a6227"));
+            validationButton.setPrefSize(70, 25);
+            validationButton.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            validationButton.getStyleClass().add("validationButton");
+            validationButton.setFocusTraversable(true);
         }
     }
 
