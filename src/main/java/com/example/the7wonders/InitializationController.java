@@ -7,16 +7,23 @@ import com.example.the7wonders.domain.wonder.Wonder;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
+
+import javafx.geometry.HPos;
+
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +56,7 @@ public class InitializationController {
     private static Wonder wonder;
 
     public static void launch(){
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
       // Scene scene = new Scene(root, 600, 600);
 
@@ -58,11 +66,20 @@ public class InitializationController {
         Background bg = new Background(bgFill, bgFill2);
         root.setBackground(bg);
 
+
         Scene scene = new Scene(root, 600, 600);
+
+
+       // Scene scene = new Scene(root, 800, 600);
+
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
         HelloApplication.stage.setTitle("Choose a Wonder and a name");
         HelloApplication.stage.setScene(scene);
         HelloApplication.stage.show();
+
+        // espace vertical
+        root.setVgap(25);
+
 
         // Réflechir à juste faire un tableau
         availableWonders = new ArrayList<>();
@@ -75,6 +92,9 @@ public class InitializationController {
         availableWonders.add(Wonder.Rhodes);
         displayElements();
         choice();
+
+        //espace horizontal de sorte à créer 2 colonnes
+        root.setHgap(50);
     }
 
     public static void choice(){
@@ -86,18 +106,32 @@ public class InitializationController {
             Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 80,100 ,false,true);
             ImageView imageView = new ImageView(image);
             imageWonders.add(imageView);
-            Button button = new Button("Choose");
-            button.setOnAction(new EventHandler<ActionEvent>() {
+
+            //un effet de drop Shadow
+            DropShadow ds = new DropShadow();
+            ds.setOffsetY(8.0);
+            ds.setOffsetX(8.0);
+            ds.setRadius(6.0);
+            ds.setColor(Color.valueOf("#8a6227"));
+
+            Button button1 = new Button("Choose");
+            button1.setEffect(ds);
+
+            button1.setPrefSize(80, 30);
+            button1.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            button1.getStyleClass().add("button1");
+            button1.setFocusTraversable(true);
+            button1.setOnMouseClicked(mouseEvent -> button1.requestFocus());
+            button1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     wonder = w;
                 }
             });
-            buttonWonders.add(button);
-            root.getChildren().addAll(imageView, button);
+            buttonWonders.add(button1);
+            root.getChildren().addAll(imageView, button1);
         }
     }
-
 
     private static void displayElements(){
 
