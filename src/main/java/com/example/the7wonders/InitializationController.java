@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleMapProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Side;
 import javafx.scene.Scene;
@@ -19,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
 
 
 import java.util.ArrayList;
@@ -68,6 +70,7 @@ public class InitializationController {
 
         // espace vertical
         root.setVgap(25);
+
 
         // Réflechir à juste faire un tableau
         availableWonders = new ArrayList<>();
