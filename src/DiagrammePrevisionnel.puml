@@ -1,0 +1,102 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package "Cards"{
+  class Card
+  enum CardBack
+  enum CardCategory{
+    MaterialCard
+    ProgressCard
+    WarCard
+    PoliticCard
+  }
+  class CardDecks
+  enum CardType
+  enum Material{
+    Wood
+    Paper
+    Brick
+    Stone
+    Glass
+    Gold
+  }
+  enum ScienceCategory{
+    Law
+    Mechanic
+    Architect
+  }
+  Card --> CardType
+  Card --> CardBack
+  CardDecks --> CardType
+  CardType --> CardCategory
+  CardType --> Material
+  CardType --> ScienceCategory
+
+}
+
+
+package "controllers"{
+    class GameController
+    class HelloController
+    class InitializationController
+}
+
+package game{
+    class Game
+    class Player
+    class Table
+
+    Game --> Table
+    Game --> Player
+}
+
+package tokens{
+    class ConflictTokens
+    enum ProgressToken{
+    Urbanism
+    ArtsAndCrafts
+    Jewelry
+    Science
+    Propaganda
+    Architecture
+    Economy
+    Ingeniery
+    Tactic
+    Decoration
+    Politic
+    Strategy
+    Education
+    Culture
+    }
+    class ProgressTokens
+
+
+    ProgressTokens --> ProgressToken
+}
+abstract class Tokens
+ConflictTokens --|> Tokens
+ProgressTokens --|> Tokens
+
+package wonder{
+    class Piece
+    enum Wonder
+    class WonderClass
+    WonderClass --> Piece
+    Wonder --> WonderClass
+}
+
+CardBack --> Wonder
+GameController --> CardType
+GameController --> Player
+InitializationController --> Wonder
+HelloController --> InitializationController
+InitializationController --> GameController
+Table --> CardType
+Table --> Tokens
+Table --> CardDecks
+Player --> CardType
+Player --> Wonder
+class HelloApplication
+HelloApplication --> HelloController
+
+@enduml
