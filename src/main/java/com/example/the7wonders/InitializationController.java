@@ -14,10 +14,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,15 +87,30 @@ public class InitializationController {
             Image image = new Image(String.valueOf(HelloApplication.class.getResource(w.getPathImage() + "wonder-" + w.frenchName +".png")), 150,100 ,false,true);
             ImageView imageView = new ImageView(image);
             imageWonders.add(imageView);
-            Button button = new Button("Choose");
-            button.setOnAction(new EventHandler<ActionEvent>() {
+
+            //un effet de drop Shadow
+            DropShadow ds = new DropShadow();
+            ds.setOffsetY(8.0);
+            ds.setOffsetX(8.0);
+            ds.setRadius(6.0);
+            ds.setColor(Color.DARKGOLDENROD);
+
+            Button button1 = new Button("Choose");
+            button1.setEffect(ds);
+
+            button1.setPrefSize(80, 30);
+            button1.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            button1.getStyleClass().add("button1");
+            button1.setFocusTraversable(true);
+            button1.setOnMouseClicked(mouseEvent -> button1.requestFocus());
+            button1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     wonder = w;
                 }
             });
-            buttonWonders.add(button);
-            root.getChildren().addAll(imageView, button);
+            buttonWonders.add(button1);
+            root.getChildren().addAll(imageView, button1);
         }
     }
 
