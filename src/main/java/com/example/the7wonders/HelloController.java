@@ -16,7 +16,7 @@ public class HelloController {
     @FXML
     private VBox rootVBox;
     @FXML
-    public void onHelloButtonClick() {
+    public void onHelloButtonClick() throws Exception {
         Game.getContext().setNbPlayers(Integer.parseInt(welcomeText.getText()));
         InitializationController.launch();
     }
@@ -27,7 +27,6 @@ public class HelloController {
             welcomeText.setText(Integer.toString(newValue.intValue()));
         });
     }
-
     @FXML
     protected void onExitButton(){
         Stage stage = (Stage) rootVBox.getScene().getWindow();
