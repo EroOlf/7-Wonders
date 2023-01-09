@@ -39,6 +39,10 @@ public class Player {
         voisinGauche = p;
     }
 
+    public Player getVoisinGauche(){
+        return voisinGauche;
+    }
+
     public List<CardType> getWonderDeck(){
         return wonder.getDeck();
     }
