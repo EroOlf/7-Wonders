@@ -52,7 +52,6 @@ public class InitializationController {
     private static Wonder wonder;
 
     public static void launch(){
-       // Scene scene = new Scene(root, 600, 600);
 
         //background avec couleur et contour
         BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
@@ -60,11 +59,15 @@ public class InitializationController {
         Background bg = new Background(bgFill, bgFill2);
         root.setBackground(bg);
 
+
         Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
         HelloApplication.stage.setTitle("Choose a Wonder and a name");
         HelloApplication.stage.setScene(scene);
         HelloApplication.stage.show();
+
+        // espace vertical
+        root.setVgap(25);
 
         // Réflechir à juste faire un tableau
         availableWonders = new ArrayList<>();
@@ -77,6 +80,9 @@ public class InitializationController {
         availableWonders.add(Wonder.Rhodes);
         displayElements();
         choice();
+
+        //espace horizontal de sorte à créer 2 colonnes
+        root.setHgap(50);
     }
 
     public static void choice(){
@@ -93,7 +99,7 @@ public class InitializationController {
             ds.setOffsetY(8.0);
             ds.setOffsetX(8.0);
             ds.setRadius(6.0);
-            ds.setColor(Color.DARKGOLDENROD);
+            ds.setColor(Color.valueOf("#8a6227"));
 
             Button button1 = new Button("Choose");
             button1.setEffect(ds);
@@ -113,7 +119,6 @@ public class InitializationController {
             root.getChildren().addAll(imageView, button1);
         }
     }
-
 
     private static void displayElements(){
 
