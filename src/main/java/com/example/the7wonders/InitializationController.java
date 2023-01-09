@@ -16,7 +16,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -51,7 +50,7 @@ public class InitializationController {
     private static Wonder wonder;
 
     public static void launch(){
-        Scene scene = new Scene(root, 500, 600);
+       // Scene scene = new Scene(root, 600, 600);
 
         //background avec couleur et contour
         BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
@@ -59,10 +58,10 @@ public class InitializationController {
         Background bg = new Background(bgFill, bgFill2);
         root.setBackground(bg);
 
-        Scene scene1 = new Scene(root, 800, 800);
+        Scene scene = new Scene(root, 800, 600);
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
         HelloApplication.stage.setTitle("Choose a Wonder and a name");
-        HelloApplication.stage.setScene(scene1);
+        HelloApplication.stage.setScene(scene);
         HelloApplication.stage.show();
 
         // Réflechir à juste faire un tableau
