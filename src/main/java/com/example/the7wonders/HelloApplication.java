@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.util.List;
 
@@ -14,7 +16,7 @@ import java.util.List;
         public static Stage stage;
 
         @Override
-        public void start(Stage stage) throws IOException {
+        public void start(Stage stage) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             //Scene scene = new Scene(fxmlLoader.load(), 620, 370);
