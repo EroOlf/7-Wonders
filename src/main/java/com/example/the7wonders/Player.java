@@ -3,7 +3,9 @@ package com.example.the7wonders;
 import com.example.the7wonders.domain.cards.CardDecks;
 import com.example.the7wonders.domain.cards.CardType;
 import com.example.the7wonders.domain.wonder.Wonder;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.*;
@@ -21,6 +23,8 @@ public class Player {
 
     private static FlowPane root = new FlowPane();
 
+
+
 //essai ne fonctionne pas pour ajouter le fond sur la 3 e page
     //public static void launch(){
         //BackgroundFill bgFill = new BackgroundFill(Color.valueOf("#8a6227"), new CornerRadii(0), new Insets(0));
@@ -33,6 +37,8 @@ public class Player {
         //HelloApplication.stage.setScene(scene);
         //HelloApplication.stage.show();
    // }
+
+
 
     public Player(String name, Wonder wonder) throws Exception {
 
