@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="1786.0" prefWidth="2661.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.HelloController">
+   <children>
+      <Pane layoutX="76.0" layoutY="846.0" prefHeight="3794.0" prefWidth="5560.0">
+         <children>
+            <ImageView fitHeight="5419.0" fitWidth="9582.0" layoutX="-3137.0" layoutY="-1128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/backgrounds/background.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="855.0" fitWidth="549.0" layoutX="1746.0" layoutY="177.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-back/card-back-question.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="642.0" fitWidth="478.0" layoutX="2382.0" layoutY="481.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-cat.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="855.0" fitWidth="549.0" layoutX="1756.0" layoutY="187.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-back/card-back-question.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="1801.0" layoutY="2631.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-material-wood-lumberjack.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="340.0" layoutY="2738.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-war-centurion.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="3370.0" layoutY="2699.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-material-gold-vizir.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="424.0" layoutY="1392.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-progress-architect.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="437.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-material-paper-women.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4190.0" layoutY="1130.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/halicarnasse.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4041.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-war-archer-2corns.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="459.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/alexandriie.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="489.0" layoutY="2020.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/babylon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="785.0" layoutY="2802.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/ephese.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="2385.0" layoutY="2641.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/giseh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4205.0" layoutY="1750.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-material-paper-women.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4166.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/rhodes.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
