@@ -27,6 +27,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 
+import javax.crypto.spec.PSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -170,7 +171,9 @@ public class InitializationController {
                     errorText.setText("Veuillez choisir une merveille");
                     return;
                 }
-                Game.getContext().createPlayers(name, transformationWonderToClass (wonder));
+                System.out.println(transformationWonderToClass(wonder).getName());
+                Game.getContext().createPlayers(name, transformationWonderToClass(wonder));
+
                 currentNbPlayer++;
                 availableWonders.remove(wonder);
                 errorText.setText("");
@@ -191,7 +194,10 @@ public class InitializationController {
     private static WonderClass transformationWonderToClass(Wonder wonder){
         switch(wonder.frenchName){
             case "Alexandrie":
-                return new Alexandrie();
+                WonderClass A = new Alexandrie();
+                System.out.println("Coucou");
+                System.out.println(A.getName());
+                return A;
             default:
                 return null;
         }

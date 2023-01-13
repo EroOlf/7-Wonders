@@ -48,8 +48,10 @@ public class Game {
     }
 
     public void createPlayers(String name, WonderClass wonder){
+        System.out.println(wonder.getName());
         try{
             players.add(new Player(name, wonder));
+            System.out.println(players.get(0).getWonder().getName());
            /* switch(wonder.frenchName){
                 case "Alexandrie":
                     players.add(new Player(name, new Alexandrie(wonder)));
