@@ -23,7 +23,7 @@
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <children>
-                <Label fx:id="welcomeText" text="BIENVENUE DANS 7 WONDERS ARCHITECTS" textFill="#8a6227">
+                <Label fx:id="welcomeText" text="Bienvenue dans 7 Wonders Architects" textFill="#8a6227">
                     <font>
                         <Font name="Cochin" size="24.0" />
                     </font></Label>
