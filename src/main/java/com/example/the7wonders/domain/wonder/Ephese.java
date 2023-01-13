@@ -1,2 +1,2 @@
-package com.example.the7wonders.domain.wonder;public class Epehese {
+package com.example.the7wonders.domain.wonder;public class Ephese {
 }
