@@ -1,6 +1,8 @@
 package com.example.the7wonders.domain.game;
 
+import com.example.the7wonders.domain.wonder.Alexandrie;
 import com.example.the7wonders.domain.wonder.Wonder;
+import com.example.the7wonders.domain.wonder.WonderClass;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -19,13 +21,13 @@ public class Game {
 
     public static void play() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
         context = new Game();
-            File mp3File = new File("7Wondersmusic.wav");
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(mp3File);
+        File mp3File = new File("7Wondersmusic.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(mp3File);
 
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioInputStream);
+        clip.start();
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     public static Game getContext(){
@@ -45,9 +47,16 @@ public class Game {
         return table;
     }
 
-    public void createPlayers(String name, Wonder wonder){
+    public void createPlayers(String name, WonderClass wonder){
         try{
             players.add(new Player(name, wonder));
+           /* switch(wonder.frenchName){
+                case "Alexandrie":
+                    players.add(new Player(name, new Alexandrie(wonder)));
+                    break;
+                default :
+                    System.out.println("N'existe pas");
+            }*/
         } catch(Exception e){
             System.out.println("Pb avec le player");
         }
@@ -68,6 +77,6 @@ public class Game {
     public void shuffleDeck(Player p){
         // Mélanger : le deck du player, le deck de son voisin de gauche, faire celle de la pioche central à part, au tout début
         // Si on mélange le deck de tout le monde, pas besoin de le faire pour le voisin de gauche
-         Collections.shuffle(p.getWonderDeck());
+        Collections.shuffle(p.getWonderDeck());
     }
 }

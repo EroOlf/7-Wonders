@@ -2,7 +2,7 @@
 package com.example.the7wonders.domain.controllers;//package com.example.the7wonders;
 
 //import com.example.the7wonders.domain.Game;
-import com.example.the7wonders.domain.controllers.InitializationController;
+import com.example.the7wonders.InitializationController;
 
 //package com.example.the7wonders.domain.controllers;
 
