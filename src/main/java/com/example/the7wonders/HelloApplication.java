@@ -4,6 +4,7 @@ package com.example.the7wonders;
 import com.example.the7wonders.domain.game.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -19,11 +20,17 @@ import java.util.List;
         public void start(Stage stage) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-            //Scene scene = new Scene(fxmlLoader.load(), 620, 370);
+
+            FXMLLoader fxmlLoader1 = new  FXMLLoader(HelloApplication.class.getResource("player-view.fxml"));
+            Scene scene2 = new Scene(fxmlLoader1.load(), 300, 300);
+
             HelloApplication.stage = stage;
             Game.play();
             stage.setTitle("Hello!");
             stage.setScene(scene);
+            stage.show();
+
+            stage.setScene(scene2);
             stage.show();
         }
 

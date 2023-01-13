@@ -1,7 +1,7 @@
 package com.example.the7wonders.domain.wonder;
 
 
-import com.example.the7wonders.domain.cards.CardType;
+import com.example.the7wonders.domain.cards.*;
 import javafx.scene.layout.FlowPane;
 
 import java.util.List;

@@ -1,9 +1,11 @@
 package com.example.the7wonders.domain.controllers;
 
-import com.example.the7wonders.HelloApplication;
-import com.example.the7wonders.domain.game.Player;
-import com.example.the7wonders.domain.cards.CardType;
+
 import com.example.the7wonders.domain.game.Game;
+import com.example.the7wonders.domain.game.Player;
+import com.example.the7wonders.domain.game.Table;
+import com.example.the7wonders.domain.cards.*;
+import com.example.the7wonders.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -67,7 +69,7 @@ public class GameController {
 
     private static void displayCard(Player p){
         List<CardType> deck = p.getWonderDeck();
-        Image imageCarBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder().+".png")), 200,300 ,false,true);
+        Image imageCarBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder()+".png")), 200,300 ,false,true);
 
         for(CardType c : deck){
             Image imageCard = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);

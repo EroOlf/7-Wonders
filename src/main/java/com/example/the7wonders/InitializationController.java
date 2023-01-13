@@ -3,7 +3,9 @@ package com.example.the7wonders;
 
 import com.example.the7wonders.domain.controllers.GameController;
 import com.example.the7wonders.domain.game.Game;
+import com.example.the7wonders.domain.wonder.Alexandrie;
 import com.example.the7wonders.domain.wonder.Wonder;
+import com.example.the7wonders.domain.wonder.WonderClass;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -168,7 +170,7 @@ public class InitializationController {
                     errorText.setText("Veuillez choisir une merveille");
                     return;
                 }
-                Game.getContext().createPlayers(name, wonder);
+                Game.getContext().createPlayers(name, transformationWonderToClass (wonder));
                 currentNbPlayer++;
                 availableWonders.remove(wonder);
                 errorText.setText("");
@@ -184,5 +186,14 @@ public class InitializationController {
                 }
             }
         });
+    }
+
+    private static WonderClass transformationWonderToClass(Wonder wonder){
+        switch(wonder.frenchName){
+            case "Alexandrie":
+                return new Alexandrie();
+            default:
+                return null;
+        }
     }
 }
