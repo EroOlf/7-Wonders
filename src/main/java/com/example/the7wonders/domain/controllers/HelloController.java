@@ -14,6 +14,10 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class HelloController {
     @FXML
     private Label welcomeText;
@@ -22,9 +26,10 @@ public class HelloController {
     @FXML
     private VBox rootVBox;
     @FXML
-    public void onHelloButtonClick() {
+    public void onHelloButtonClick() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         Game.getContext().setNbPlayers(Integer.parseInt(welcomeText.getText()));
         InitializationController.launch();
+
     }
 
     @FXML

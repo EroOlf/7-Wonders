@@ -26,6 +26,17 @@ import java.util.List;
             stage.setTitle("Hello!");
             stage.setScene(scene);
             stage.show();
+
+
+            /*FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
+            Scene scene1 = new Scene(fxmlLoader1.load(), 600, 400);
+            HelloApplication.stage = stage;
+            Game.play();
+            stage.setTitle("Hello!");
+            stage.setScene(scene1);
+            stage.show();*/
+
+
         }
 
         public static void main(String[] args) throws Exception {

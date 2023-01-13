@@ -9,15 +9,23 @@ import com.example.the7wonders.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.the7wonders.HelloApplication.stage;
 
 public class GameController {
     // Pour l'instant juste afficher les merveilles
@@ -35,13 +43,24 @@ public class GameController {
     private static final int nbPlayers = Game.getContext().getNbPlayers();
     private static List<Player> players = Game.getContext().getPlayers();
 
-    public static void initializeGame(){
-        Scene scene = new Scene(root, 800, 800);
-        HelloApplication.stage.setTitle("Choose a Wonder and a name");
-        HelloApplication.stage.setScene(scene);
-        HelloApplication.stage.show();
-        initializeData();
-    }
+    public static void initializeGame()  {
+        //public void onHelloButtonClick(ActionEvent event) {
+            try {
+                Stage stage = new Stage();
+                FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
+                Scene scene1 = new Scene(fxmlLoader1.load(), 730, 500);
+                stage.setTitle("Menu");
+                stage.setScene(scene1);
+                stage.show();
+                //((Node) (event.getSource())).getScene().getWindow().hide();
+                HelloApplication.stage.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
 
     private static void initializeData(){
         Game.getContext().shuffleCentralDeck();
@@ -52,7 +71,7 @@ public class GameController {
         // Initialiser les joueurs
         displayPlayers();
         // Intialiser le deck central
-        displayCentralDeck();
+        //displayCentralDeck();
         // Initialiser les jetons
         // Initialiser le chat
         // Initialiser le
@@ -95,7 +114,10 @@ public class GameController {
                 root.getChildren().add(imageViewCentralDeckCard);
                 centralDeck.remove(cptCentralDeck);
                 cptCentralDeck++;
+
             }
+
+
         });
     }
 

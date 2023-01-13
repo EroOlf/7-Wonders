@@ -3,9 +3,7 @@ package com.example.the7wonders;
 
 import com.example.the7wonders.domain.controllers.GameController;
 import com.example.the7wonders.domain.game.Game;
-import com.example.the7wonders.domain.wonder.Alexandrie;
-import com.example.the7wonders.domain.wonder.Wonder;
-import com.example.the7wonders.domain.wonder.WonderClass;
+import com.example.the7wonders.domain.wonder.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,11 +24,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 
 import javax.crypto.spec.PSource;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.the7wonders.HelloApplication.stage;
 
 public class InitializationController {
 
@@ -58,7 +63,7 @@ public class InitializationController {
     private static final int nbPlayer = Game.getContext().getNbPlayers();
     private static Wonder wonder;
 
-    public static void launch(){
+    public static void launch() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
 
        // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
@@ -74,14 +79,14 @@ public class InitializationController {
         root.setBackground(bg);
 
 
-        Scene scene = new Scene(root, 780, 450);
+        Scene scene = new Scene(root, 800, 790);
 
         //anciennement :  Scene scene = new Scene(root, 800, 600);
 
         //scene.getStylesheets().add(HelloApplication.class.getResource("fight.css").toExternalForm());
-        HelloApplication.stage.setTitle("Choose a Wonder and a name");
-        HelloApplication.stage.setScene(scene);
-        HelloApplication.stage.show();
+        stage.setTitle("Choose a Wonder and a name");
+        stage.setScene(scene);
+        stage.show();
 
         // espace vertical
         root.setVgap(25);
@@ -102,7 +107,7 @@ public class InitializationController {
         root.setHgap(50);
     }
 
-    public static void choice(){
+    public static void choice() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
 
         root.getChildren().addAll(descriptionText, pseudo, validationButton, errorText);
         root.setPadding(new Insets(25,5,0,5));
@@ -137,6 +142,10 @@ public class InitializationController {
             button1.setFocusTraversable(true);
             button1.setOnMouseClicked(mouseEvent -> button1.requestFocus());
             button1.setOnAction(new EventHandler<ActionEvent>() {
+
+
+
+
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     wonder = w;
@@ -153,10 +162,15 @@ public class InitializationController {
             validationButton.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
             validationButton.getStyleClass().add("validationButton");
             validationButton.setFocusTraversable(true);
+
+
+
+
         }
     }
 
     private static void displayElements(){
+
 
         validationButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -167,6 +181,7 @@ public class InitializationController {
                     errorText.setText("Veuillez entrer votre nom");
                     return;
                 }
+
                 if(wonder == null){
                     errorText.setText("Veuillez choisir une merveille");
                     return;
@@ -179,7 +194,15 @@ public class InitializationController {
                 errorText.setText("");
                 if(currentNbPlayer < nbPlayer){
                     root.getChildren().clear();
-                    choice();
+                    try {
+                        choice();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (UnsupportedAudioFileException e) {
+                        e.printStackTrace();
+                    } catch (LineUnavailableException e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("Joueur suivant");
                 } else{
                     // Lancer la page de jeu
@@ -195,9 +218,36 @@ public class InitializationController {
         switch(wonder.frenchName){
             case "Alexandrie":
                 WonderClass A = new Alexandrie();
-                System.out.println("Coucou");
                 System.out.println(A.getName());
                 return A;
+            case "Babylone":
+                WonderClass B = new Babylon();
+                System.out.println(B.getName());
+                return B;
+            case "Ephese":
+                WonderClass C = new Ephese();
+                System.out.println(C.getName());
+                return C;
+            case "Halicarnasse":
+                WonderClass D = new Halicarnasse();
+                System.out.println(D.getName());
+                return D;
+            case "Olympe":
+                WonderClass E = new Olympie();
+                System.out.println(E.getName());
+                return E;
+            case "Rhodes":
+                WonderClass F = new Rhodes();
+                System.out.println(F.getName());
+                return F;
+            case "Gizeh":
+                WonderClass H = new Rhodes();
+                System.out.println(H.getName());
+                return H;
+
+
+
+
             default:
                 return null;
         }

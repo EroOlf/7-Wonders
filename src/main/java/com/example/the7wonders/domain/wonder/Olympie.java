@@ -1,5 +1,8 @@
 package com.example.the7wonders.domain.wonder;
 
+import com.example.the7wonders.HelloApplication;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
@@ -22,6 +25,10 @@ public class Olympie extends WonderClass{
 
     @Override
     public void constructWonder(FlowPane root) {
+        for(Piece p : pieces){
+            Image image = new Image(String.valueOf(HelloApplication.class.getResource(p.getPathImage())), p.getPosX(), p.getPosY() ,false,true);
+            ImageView imageView = new ImageView(image);
+            root.getChildren().add(imageView);}
 
     }
 }

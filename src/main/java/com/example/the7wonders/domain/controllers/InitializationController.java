@@ -27,8 +27,10 @@ import javafx.scene.paint.Color;
 
 import javafx.geometry.BoundingBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +77,7 @@ public class InitializationController {
                 root.setBackground(bg);
 
 
-                Scene scene = new Scene(root, 780, 450);
+                Scene scene = new Scene(root, 1000, 800);
 
                 //anciennement :  Scene scene = new Scene(root, 800, 600);
 
@@ -159,12 +161,15 @@ public class InitializationController {
                     validationButton.getStyleClass().add("validationButton");
                     validationButton.setFocusTraversable(true);
                     validationButton.setOnMouseClicked(mouseEvent -> validationButton.requestFocus());
+
+
                 }
             }
 
             private static void displayElements() {
 
                 validationButton.setOnAction(new EventHandler<ActionEvent>() {
+
                     @Override
                     public void handle(ActionEvent actionEvent) {
                         String name = pseudo.getText();
