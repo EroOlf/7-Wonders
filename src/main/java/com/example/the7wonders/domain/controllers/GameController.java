@@ -62,6 +62,7 @@ public class GameController {
         for(Player p : players){
             // Afficher les meveilles en construction
             p.getWonder();
+            System.out.println(p.getWonder().getName());
             //Afficher les pioches
             p.getWonderDeck();
         }

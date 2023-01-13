@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alexandrie extends WonderClass{
-    private List<Piece> pieces;
-    private Wonder wonder = Wonder.Alexandrie;
+    private static List<Piece> pieces = new ArrayList<Piece>(){{
+        add(new Piece(4, PieceEffects.Null, 2, false, "images/wonders/alexandrie/piece-front-alexandrie-1.png", 0, 0));
+        add(new Piece(6, PieceEffects.Null, 3, false, "images/wonders/alexandrie/piece-front-alexandrie-2.png", 0, 100));
+        add(new Piece(5, PieceEffects.Pioche,3, true, "images/wonders/alexandrie/piece-front-alexandrie-3.png", 100, 100));
+        add(new Piece(3, PieceEffects.Pioche, 2, true, "images/wonders/alexandrie/piece-front-alexandrie-4.png", 0, 200));
+        add(new Piece(7, PieceEffects.Null, 4, false, "images/wonders/alexandrie/piece-front-alexandrie-6.png", 0, 300));
+    }};
+    private static Wonder wonder = Wonder.Alexandrie;
 
     public Alexandrie(){
-        //super(wonder);
-        pieces = new ArrayList<>();
-        pieces.add(new Piece(4, PieceEffects.Null, 2, false, "images/wonders/alexandrie/piece-front-alexandrie-1.png", 0, 0));
-        pieces.add(new Piece(6, PieceEffects.Null, 3, false, "images/wonders/alexandrie/piece-front-alexandrie-2.png", 0, 100));
-        pieces.add(new Piece(5, PieceEffects.Pioche,3, true, "images/wonders/alexandrie/piece-front-alexandrie-3.png", 100, 100));
-        pieces.add(new Piece(3, PieceEffects.Pioche, 2, true, "images/wonders/alexandrie/piece-front-alexandrie-4.png", 0, 200));
-        pieces.add(new Piece(7, PieceEffects.Null, 4, false, "images/wonders/alexandrie/piece-front-alexandrie-6.png", 0, 300));
+        super(wonder, pieces);
     }
 
 
@@ -32,8 +32,4 @@ public class Alexandrie extends WonderClass{
         }
 
     }
-
-
-
-
 }
