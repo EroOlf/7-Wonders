@@ -4,6 +4,8 @@ public enum PieceEffects {
     Null,
     Pioche,
     ChooseACard,
-    CardCentralDeck
+    CardCentralDeck,
+    Bouclier,
+    Jeton
 }
 

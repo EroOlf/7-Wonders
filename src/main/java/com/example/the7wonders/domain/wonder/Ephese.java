@@ -13,7 +13,7 @@ public class Ephese extends WonderClass{
         add(new Piece(4, PieceEffects.Null, 2, false, "images/wonders/ephese/piece-front-ephese-5.png", 0, 200));
         add(new Piece(7, PieceEffects.Null, 4, false, "images/wonders/ephese/piece-front-ephese-6.png", 0, 300));
     }};
-    private static Wonder wonder = Wonder.Halicarnasse;
+    private static Wonder wonder = Wonder.Ephese;
 
     public Ephese(){
         super(wonder, pieces);
