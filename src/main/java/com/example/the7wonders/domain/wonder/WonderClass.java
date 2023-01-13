@@ -2,9 +2,7 @@ package com.example.the7wonders.domain.wonder;
 
 
 import com.example.the7wonders.Player;
-import com.example.the7wonders.domain.cards.CardCategory;
-import com.example.the7wonders.domain.cards.CardType;
-import com.example.the7wonders.domain.cards.Material;
+import com.example.the7wonders.domain.cards.*;
 import javafx.scene.layout.FlowPane;
 
 import java.util.List;
