@@ -14,84 +14,149 @@
                   <Image url="@com/example/the7wonders/images/backgrounds/background.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="855.0" fitWidth="549.0" layoutX="1746.0" layoutY="177.0">
-               <image>
-                  <Image url="@com/example/the7wonders/images/cards/card-back/card-back-question.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="642.0" fitWidth="478.0" layoutX="2382.0" layoutY="481.0">
+            <ImageView fitHeight="642.0" fitWidth="478.0" layoutX="3031.0" layoutY="522.0">
                <image>
                   <Image url="@com/example/the7wonders/images/tokens/token-cat.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="855.0" fitWidth="549.0" layoutX="1756.0" layoutY="187.0">
+            <ImageView fitHeight="837.0" fitWidth="567.0" layoutX="2568.0" layoutY="61.0">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-back/card-back-question.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="1801.0" layoutY="2631.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="1751.0" layoutY="2923.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-material-wood-lumberjack.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="340.0" layoutY="2738.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="330.0" layoutY="2926.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-war-centurion.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="3370.0" layoutY="2699.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="4623.0" layoutY="2418.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-material-gold-vizir.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="424.0" layoutY="1392.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="387.0" layoutY="1260.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-progress-architect.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="437.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="439.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-material-paper-women.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4190.0" layoutY="1130.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="4095.0" layoutY="1412.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/halicarnasse.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4041.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="4486.0" layoutY="1025.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/cards/card-war-archer-2corns.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="459.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="638.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/alexandriie.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="489.0" layoutY="2020.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="660.0" layoutY="1737.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/babylon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="785.0" layoutY="2802.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="806.0" layoutY="2610.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/ephese.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="2385.0" layoutY="2641.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="2190.0" layoutY="2678.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/giseh.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4205.0" layoutY="1750.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@com/example/the7wonders/images/cards/card-material-paper-women.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="556.0" fitWidth="396.0" layoutX="4166.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="4093.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
                   <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/rhodes.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1000.0" fitWidth="800.0" layoutX="3437.0" layoutY="2673.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/wonders/wonderSansBackground/giseh.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="500.0" fitWidth="350.0" layoutX="3097.0" layoutY="2876.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/cards/card-material-gold-vizir.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="1504.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-war.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="2255.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="1840.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="1991.0" layoutY="644.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="1693.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-3-laurel-points.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="1928.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="2071.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="2222.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="2075.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens/token-conflict-peace.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="3307.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens-progress/token-architecture.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="304.0" fitWidth="209.0" layoutX="3372.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens-progress/token-culture.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="3666.0" layoutY="164.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens-progress/token-economy.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="3596.0" layoutY="333.0">
+               <image>
+                  <Image url="@com/example/the7wonders/images/tokens-progress/token-decoration.png" />
                </image>
             </ImageView>
          </children>
