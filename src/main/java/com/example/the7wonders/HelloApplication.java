@@ -21,16 +21,10 @@ import java.util.List;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
-            FXMLLoader fxmlLoader1 = new  FXMLLoader(HelloApplication.class.getResource("player-view.fxml"));
-            Scene scene2 = new Scene(fxmlLoader1.load(), 300, 300);
-
             HelloApplication.stage = stage;
             Game.play();
             stage.setTitle("Hello!");
             stage.setScene(scene);
-            stage.show();
-
-            stage.setScene(scene2);
             stage.show();
         }
 
