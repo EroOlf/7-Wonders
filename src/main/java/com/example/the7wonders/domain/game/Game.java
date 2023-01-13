@@ -1,7 +1,7 @@
 package com.example.the7wonders.domain.game;
 
 import com.example.the7wonders.domain.wonder.Alexandrie;
-import com.example.the7wonders.domain.wonder.Wonder;
+import com.example.the7wonders.domain.wonder.*;
 import com.example.the7wonders.domain.wonder.WonderClass;
 
 import javax.sound.sampled.*;

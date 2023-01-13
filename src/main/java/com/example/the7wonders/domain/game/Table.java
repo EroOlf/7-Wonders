@@ -1,10 +1,7 @@
 package com.example.the7wonders.domain.game;
 
-import com.example.the7wonders.domain.cards.CardDecks;
-import com.example.the7wonders.domain.cards.CardType;
-import com.example.the7wonders.domain.tokens.ConflictTokens;
-import com.example.the7wonders.domain.tokens.ProgressTokens;
-import com.example.the7wonders.domain.tokens.Tokens;
+import com.example.the7wonders.domain.cards.*;
+import com.example.the7wonders.domain.tokens.*;
 
 import java.util.ArrayList;
 import java.util.List;
