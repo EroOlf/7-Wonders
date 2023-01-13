@@ -1,8 +1,7 @@
 package com.example.the7wonders.domain.game;
 
-import com.example.the7wonders.domain.cards.CardDecks;
 import com.example.the7wonders.domain.cards.CardType;
-import com.example.the7wonders.domain.wonder.Wonder;
+import com.example.the7wonders.domain.wonder.WonderClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +12,10 @@ public class Player {
     private Player voisinGauche;
     private List<CardType> cards;
     // A remplacer par WonderClass et donc suppr wonderDeck
-    private Wonder wonder;
+    private WonderClass wonder;
     //private List<CardType> wonderDeck;
 
-    public Player(String name, Wonder wonder) throws Exception {
+    public Player(String name, WonderClass wonder) throws Exception {
         this.name = name;
         this.voisinDroite = null;
         this.voisinGauche = null;
@@ -27,7 +26,7 @@ public class Player {
         //initializeWonderDeck();
     }
 
-    public Wonder getWonder() {
+    public WonderClass getWonder() {
         return wonder;
     }
 
@@ -48,40 +47,5 @@ public class Player {
     }
 
 
-   /* private void initializeWonderDeck() throws Exception {
-        wonderDeck = new ArrayList<>();
-        switch (wonder.frenchName){
-            case "Alexandrie":
-                cardsListToCards(CardDecks.deckCardQuantities_Alexandrie);
-                break;
-            case "Halicarnasse":
-                cardsListToCards(CardDecks.deckCardQuantities_Halicarnasse);
-                break;
-            case "Ephese":
-                cardsListToCards(CardDecks.deckCardQuantities_Ephese);
-                break;
-            case "Olympie":
-                cardsListToCards(CardDecks.deckCardQuantities_Olympie);
-                break;
-            case "Babylone":
-                cardsListToCards(CardDecks.deckCardQuantities_Babylon);
-                break;
-            case "Rhodes":
-                cardsListToCards(CardDecks.deckCardQuantities_Rhodes);
-                break;
-            case "Gizeh":
-                cardsListToCards(CardDecks.deckCardQuantities_Gizeh);
-                break;
-            default:
-                throw new Exception("Merveille sans deck");
-        }
-    }
 
-    private void cardsListToCards(List<CardDecks.CardTypeQuantity> deck){
-        for(CardDecks.CardTypeQuantity c : deck){
-            for(int i = 0; i < c.quantity; ++i){
-                wonderDeck.add(c.cardType);
-            }
-        }
-    }*/
 }

@@ -57,8 +57,25 @@ public class GameController {
     }
 
     private static void displayPlayers(){
-
+        for(Player p : players){
+            // Afficher les meveilles en construction
+            p.getWonder();
+            //Afficher les pioches
+            p.getWonderDeck();
+        }
     }
+
+    private static void displayCard(Player p){
+        List<CardType> deck = p.getWonderDeck();
+        Image imageCarBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder().+".png")), 200,300 ,false,true);
+
+        for(CardType c : deck){
+            Image imageCard = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
+            ImageView imageViewCard = new ImageView(imageCard);
+            root.getChildren().add(imageViewCard);
+        }
+    }
+
     private static void displayCentralDeck(){
         System.out.println("Display Central Deck");
         Image imageQuestion = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
