@@ -43,7 +43,8 @@ public class InitializationController {
     //Lors de l'appui sur le bouton, currentNbPlayer s'incrémente
     @FXML
     private static Button validationButton = new Button("Submit");
-
+    @FXML
+    private static Button onExitButton = new Button("Exit");
     private static List<Wonder> availableWonders;
     @FXML
     private static List<ImageView> imageWonders = new ArrayList<>();
@@ -51,7 +52,7 @@ public class InitializationController {
     private static List<Button> buttonWonders = new ArrayList<>();
 
     @FXML
-    private VBox rootVBox;
+    private static VBox rootVBox;
 
     private static int currentNbPlayer = 0;
     private static final int nbPlayer = Game.getContext().getNbPlayers();
@@ -136,10 +137,6 @@ public class InitializationController {
             button1.setFocusTraversable(true);
             button1.setOnMouseClicked(mouseEvent -> button1.requestFocus());
             button1.setOnAction(new EventHandler<ActionEvent>() {
-
-
-
-
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     wonder = w;
@@ -157,10 +154,23 @@ public class InitializationController {
             validationButton.getStyleClass().add("validationButton");
             validationButton.setFocusTraversable(true);
 
-
-
-
-        }
+            //button EXIT
+            onExitButton.setFont(Font.font("Cochin",15));
+            onExitButton.setEffect(ds);
+            onExitButton.setTextFill(Color.valueOf("#8a6227"));
+            onExitButton.setPrefSize(70, 25);
+            onExitButton.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            onExitButton.getStyleClass().add("onExitButton");
+            onExitButton.setFocusTraversable(true);
+            onExitButton.setOnMouseClicked(mouseEvent -> onExitButton.requestFocus());
+            onExitButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    Stage stage = (Stage) rootVBox.getScene().getWindow();
+                    stage.close();
+                }
+            })
+        ;}
     }
 
     private static void displayElements(){
@@ -237,8 +247,6 @@ public class InitializationController {
                 WonderClass H = new Rhodes();
                 System.out.println(H.getName());
                 return H;
-
-
 
 
             default:

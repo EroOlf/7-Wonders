@@ -196,52 +196,52 @@
                         <Image url="@images/backgrounds/icon.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="113.0" layoutY="194.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="90.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="113.0" layoutY="194.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="90.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="114.0" layoutY="43.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="90.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="114.0" layoutY="43.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="90.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="514.0" layoutY="308.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="-90.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="514.0" layoutY="308.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="-90.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="479.0" layoutY="344.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="479.0" layoutY="344.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="513.0" layoutY="164.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="-90.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="513.0" layoutY="164.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" rotate="-90.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="235.0" layoutY="21.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="235.0" layoutY="21.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="233.0" layoutY="198.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="233.0" layoutY="198.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="409.0" layoutY="24.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8f8e24">
+                  <Button layoutX="409.0" layoutY="24.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
                      <font>
                         <Font size="8.0" />
                      </font>
@@ -293,7 +293,17 @@
                   </ImageView>
                </children>
             </Pane>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
       </AnchorPane>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButtonAction" prefHeight="22.0" prefWidth="53.0" style="-fx-background-color: #e4d4b7;" text="EXIT" textAlignment="CENTER" textFill="#a88038" translateX="5.0" translateY="10.0">
+               <font>
+                  <Font name="Cochin" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
