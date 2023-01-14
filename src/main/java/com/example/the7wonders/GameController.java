@@ -1,4 +1,4 @@
-package com.example.the7wonders.domain.controllers;
+package com.example.the7wonders;
 
 
 import com.example.the7wonders.domain.game.Game;
@@ -48,25 +48,28 @@ public class GameController {
     public static void initializeGame()  {
         //public void onHelloButtonClick(ActionEvent event) {
             try {
-                Stage stage = new Stage();
+                //Stage stage = new Stage();
                 FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
                 Scene scene1 = new Scene(fxmlLoader1.load(), 720, 500);
-                stage.setTitle("Menu");
-                stage.setScene(scene1);
-                stage.show();
+                HelloApplication.stage.setTitle("Menu");
+                HelloApplication.stage.setScene(scene1);
+                HelloApplication.stage.show();
+                initializeData();
                 //((Node) (event.getSource())).getScene().getWindow().hide();
-                HelloApplication.stage.close();
+                //HelloApplication.stage.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
+        System.out.println("Coucou");
+            initializeData();
         }
-
-
+        
 
     private static void initializeData(){
         Game.getContext().shuffleCentralDeck();
         centralDeck = Game.getContext().getTable().getCentralDeck();
+        displayCentralDeck();
         for(Player p : players){
             Game.getContext().shuffleDeck(p);
         }
@@ -118,9 +121,15 @@ public class GameController {
                 cptCentralDeck++;
 
             }
-
-
         });
     }
 
+
+    public void centralDeckClick(ActionEvent actionEvent) {
+        Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)), 200,300 ,false,true);
+        ImageView imageViewCentralDeckCard = new ImageView(imageCentralDeckCard);
+        root.getChildren().add(imageViewCentralDeckCard);
+        centralDeck.remove(cptCentralDeck);
+        cptCentralDeck++;
+    }
 }

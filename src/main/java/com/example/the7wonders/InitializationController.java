@@ -1,7 +1,6 @@
 package com.example.the7wonders;
 
 
-import com.example.the7wonders.domain.controllers.GameController;
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.wonder.*;
 import javafx.event.ActionEvent;
@@ -10,10 +9,7 @@ import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
 
-import javafx.geometry.HPos;
-
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,10 +20,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 
-import javax.crypto.spec.PSource;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
@@ -170,7 +164,6 @@ public class InitializationController {
     }
 
     private static void displayElements(){
-
 
         validationButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override

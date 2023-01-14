@@ -1,7 +1,7 @@
 package com.example.the7wonders.domain.controllers;
 
 import com.example.the7wonders.HelloApplication;
-import com.example.the7wonders.domain.controllers.GameController;
+import com.example.the7wonders.GameController;
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.wonder.Alexandrie;
 import com.example.the7wonders.domain.wonder.Wonder;
@@ -11,8 +11,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
-
-import javafx.geometry.HPos;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -25,12 +23,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-import javafx.geometry.BoundingBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
