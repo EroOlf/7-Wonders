@@ -3,9 +3,12 @@ package com.example.the7wonders;
 
 import com.example.the7wonders.domain.game.Game;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -49,6 +52,10 @@ import java.util.List;
         } */
             launch();
 
+        }
+
+        public void onExitButton() {
+            stage.close();
         }
     }
 
