@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -14,10 +15,10 @@ import javafx.stage.Stage;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
-import java.util.List;
 
     public class HelloApplication extends Application {
         public static Stage stage;
+
 
         @Override
         public void start(Stage stage) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
@@ -54,7 +55,12 @@ import java.util.List;
 
         }
 
-        public void onExitButton() {
+        @FXML
+        public javafx.scene.control.Button onExitButton;
+        
+        @FXML
+        private void onExitButtonAction() {
+            Stage stage = (Stage) onExitButton.getScene().getWindow();
             stage.close();
         }
     }

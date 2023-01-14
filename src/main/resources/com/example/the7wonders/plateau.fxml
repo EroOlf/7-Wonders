@@ -298,7 +298,7 @@
       </AnchorPane>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButton" prefHeight="22.0" prefWidth="53.0" style="-fx-background-color: #e4d4b7;" text="EXIT" textAlignment="CENTER" textFill="#a88038">
+            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButtonAction" prefHeight="22.0" prefWidth="53.0" style="-fx-background-color: #e4d4b7;" text="EXIT" textAlignment="CENTER" textFill="#a88038" translateX="5.0" translateY="10.0">
                <font>
                   <Font name="Cochin" size="12.0" />
                </font>
