@@ -43,6 +43,8 @@ public class GameController {
     private static final int nbPlayers = Game.getContext().getNbPlayers();
     private static List<Player> players = Game.getContext().getPlayers();
 
+    //atribut name dans le player
+
     public static void initializeGame()  {
         //public void onHelloButtonClick(ActionEvent event) {
             try {

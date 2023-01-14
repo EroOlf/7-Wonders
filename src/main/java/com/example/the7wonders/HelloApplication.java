@@ -23,7 +23,7 @@ import java.util.List;
 
             HelloApplication.stage = stage;
             Game.play();
-            stage.setTitle("Hello!");
+            stage.setTitle("7 Wonders Architects");
             stage.setScene(scene);
             stage.show();
 
