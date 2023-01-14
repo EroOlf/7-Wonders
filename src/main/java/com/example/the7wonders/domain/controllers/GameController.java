@@ -48,7 +48,7 @@ public class GameController {
             try {
                 Stage stage = new Stage();
                 FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
-                Scene scene1 = new Scene(fxmlLoader1.load(), 730, 500);
+                Scene scene1 = new Scene(fxmlLoader1.load(), 720, 500);
                 stage.setTitle("Menu");
                 stage.setScene(scene1);
                 stage.show();
@@ -103,9 +103,9 @@ public class GameController {
         Image imageQuestion = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
         ImageView imageViewQuestion = new ImageView(imageQuestion);
         root.getChildren().add(imageViewQuestion);
-        Button buttonCentralDeck = new Button("Pick");
-        root.getChildren().add(buttonCentralDeck);
-        buttonCentralDeck.setOnAction(new EventHandler<ActionEvent>() {
+        Button boutonPioche = new Button("Pioche");
+        root.getChildren().add(boutonPioche);
+        boutonPioche.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 root.getChildren().remove(imageViewQuestion);

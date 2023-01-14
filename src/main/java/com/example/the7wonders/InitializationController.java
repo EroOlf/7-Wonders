@@ -69,7 +69,7 @@ public class InitializationController {
        // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
       // Scene scene = new Scene(root, 600, 600);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
+       // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sceneChoixWonders.fxml"));
 
 
         //background avec couleur et contour
