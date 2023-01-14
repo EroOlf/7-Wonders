@@ -43,6 +43,9 @@ public class GameController {
     private static final int nbPlayers = Game.getContext().getNbPlayers();
     private static List<Player> players = Game.getContext().getPlayers();
 
+    @FXML
+    private ImageView imageViewCentralDeck = new ImageView();
+
     //atribut name dans le player
 
     public static void initializeGame()  {
@@ -61,7 +64,6 @@ public class GameController {
             catch (IOException e) {
                 e.printStackTrace();
             }
-        System.out.println("Coucou");
             initializeData();
         }
         
@@ -119,17 +121,24 @@ public class GameController {
                 root.getChildren().add(imageViewCentralDeckCard);
                 centralDeck.remove(cptCentralDeck);
                 cptCentralDeck++;
-
             }
         });
     }
 
 
     public void centralDeckClick(ActionEvent actionEvent) {
-        Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)), 200,300 ,false,true);
-        ImageView imageViewCentralDeckCard = new ImageView(imageCentralDeckCard);
-        root.getChildren().add(imageViewCentralDeckCard);
+        Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
+        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
+        //ImageView imageViewCentralDeckCard = new ImageView(imageCentralDeckCard);
+        imageViewCentralDeck.setImage(null);
+        imageViewCentralDeck.setImage(imageCentralDeckCard);
+        //root.getChildren().add(imageViewCentralDeck);
+        System.out.println("Ajout");
         centralDeck.remove(cptCentralDeck);
         cptCentralDeck++;
+    }
+
+    public void onExitButtonAction(ActionEvent actionEvent) {
+
     }
 }
