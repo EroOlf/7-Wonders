@@ -4,12 +4,16 @@ import com.example.the7wonders.domain.cards.*;
 import com.example.the7wonders.domain.wonder.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Player {
     private String name;
     private Player voisinDroite;
     private Player voisinGauche;
+    private int laurelCount = 0;
+    private int shieldCount = 0;
+    HashMap<Material, Integer> materials;
     private List<CardType> cards;
     // A remplacer par WonderClass et donc suppr wonderDeck
     private WonderClass wonder;
@@ -23,6 +27,13 @@ public class Player {
         cards.add(CardType.CardMaterialWood);
         cards.add(CardType.CardScienceLaw);
         this.wonder = wonder;
+        this.materials = new HashMap<>();
+        materials.put(Material.Brick, 0);
+        materials.put(Material.Glass, 0);
+        materials.put(Material.Gold, 0);
+        materials.put(Material.Paper, 0);
+        materials.put(Material.Stone, 0);
+        materials.put(Material.Wood, 0);
         //initializeWonderDeck();
     }
 
@@ -44,6 +55,19 @@ public class Player {
 
     public List<CardType> getWonderDeck(){
         return wonder.getDeck();
+    }
+
+    public void setLaurelCount(int laurel){
+        this.laurelCount = laurel;
+    }
+
+    public void setShieldCount(int shield){
+        this.shieldCount = shield;
+    }
+
+    public void setMaterials(Material mat, int nbMaterial){
+        int oldVal = this.materials.get(mat);
+        this.materials.replace(mat, oldVal+nbMaterial);
     }
 
 

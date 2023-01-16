@@ -14,6 +14,7 @@ public class Table {
     private final int nbConflictTockens = 4;
     private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
     private List<Tokens> tokens;
+    private int cornCount = 0;
     //Chaaaaaaaaat
 
     public static Table getTable(){
@@ -33,5 +34,9 @@ public class Table {
 
     public List<CardType> getCentralDeck(){
         return centralDeck;
+    }
+
+    public void setCornCount(int corn){
+        this.cornCount += corn;
     }
 }

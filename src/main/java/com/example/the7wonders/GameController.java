@@ -140,9 +140,13 @@ public class GameController {
     }
 
     public void playerDeckClick(ActionEvent actionEvent){
-        System.out.println(players.get(currentPlayer).getWonderDeck().size());
-        Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(players.get(currentPlayer).getWonderDeck().get(0).imageResource)));
+        CardType card = players.get(currentPlayer).getWonderDeck().get(0);
+        Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         imageViewPlayerDeck.setImage(imagePlayerDeck);
+        players.get(currentPlayer).setLaurelCount(card.laurelCount);
+        players.get(currentPlayer).setShieldCount(card.shieldCount);
+        players.get(currentPlayer).setMaterials(card.material, 1);
+        Game.getContext().getTable().setCornCount(card.cornCount);
         players.get(currentPlayer).getWonderDeck().remove(0);
         nextPlayer();
     }
