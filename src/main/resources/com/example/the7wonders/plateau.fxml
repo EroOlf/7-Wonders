@@ -51,12 +51,12 @@
                         <Image url="@images/wonders/wonderSansBackground/giseh.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="51.0" fitWidth="41.0" layoutX="89.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewLeftNeighbor" fitHeight="51.0" fitWidth="41.0" layoutX="89.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/cards/card-material-stone-stonecutter.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="51.0" fitWidth="41.0" layoutX="265.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageViewPlayerDeck" fitHeight="51.0" fitWidth="41.0" layoutX="265.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/cards/card-war-barbarian-1corn.png" />
                      </image>
@@ -86,7 +86,7 @@
                         <Image url="@images/cards/card-material-brick-women.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="302.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" fx:id="imageViewCentralDeck">
+                  <ImageView fx:id="imageViewCentralDeck" fitHeight="100.0" fitWidth="150.0" layoutX="302.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/cards/card-back/card-back-question.png" />
                      </image>
@@ -201,7 +201,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
+                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8c00ff" onAction="#NeighborLeftDeckClick">
                      <font>
                         <Font size="8.0" />
                      </font>
@@ -221,7 +221,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a88038">
+                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#00ff4d" onAction="#playerDeckClick">
                      <font>
                         <Font size="8.0" />
                      </font>
@@ -246,7 +246,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="319.0" layoutY="105.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="RED" onAction="#centralDeckClick">
+                  <Button layoutX="319.0" layoutY="105.0" mnemonicParsing="false" onAction="#centralDeckClick" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="RED">
                      <font>
                         <Font size="8.0" />
                      </font>

@@ -45,6 +45,10 @@ public class GameController {
 
     @FXML
     private ImageView imageViewCentralDeck = new ImageView();
+    @FXML
+    private ImageView imageViewPlayerDeck = new ImageView();
+    @FXML
+    private ImageView ImageViewLeftNeighbor = new ImageView();
 
     //atribut name dans le player
 
@@ -71,7 +75,7 @@ public class GameController {
     private static void initializeData(){
         Game.getContext().shuffleCentralDeck();
         centralDeck = Game.getContext().getTable().getCentralDeck();
-        displayCentralDeck();
+        //displayCentralDeck();
         for(Player p : players){
             Game.getContext().shuffleDeck(p);
         }
@@ -105,7 +109,7 @@ public class GameController {
         }
     }
 
-    private static void displayCentralDeck(){
+  /*  private static void displayCentralDeck(){
         System.out.println("Display Central Deck");
         Image imageQuestion = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
         ImageView imageViewQuestion = new ImageView(imageQuestion);
@@ -123,19 +127,39 @@ public class GameController {
                 cptCentralDeck++;
             }
         });
-    }
+    } */
 
 
     public void centralDeckClick(ActionEvent actionEvent) {
         Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
         System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
-        //ImageView imageViewCentralDeckCard = new ImageView(imageCentralDeckCard);
-        imageViewCentralDeck.setImage(null);
         imageViewCentralDeck.setImage(imageCentralDeckCard);
-        //root.getChildren().add(imageViewCentralDeck);
-        System.out.println("Ajout");
         centralDeck.remove(cptCentralDeck);
         cptCentralDeck++;
+        nextPlayer();
+    }
+
+    public void playerDeckClick(ActionEvent actionEvent){
+        System.out.println(players.get(currentPlayer).getWonderDeck().size());
+        Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(players.get(currentPlayer).getWonderDeck().get(0).imageResource)));
+        imageViewPlayerDeck.setImage(imagePlayerDeck);
+        players.get(currentPlayer).getWonderDeck().remove(0);
+        nextPlayer();
+    }
+
+    public void NeighborLeftDeckClick(ActionEvent actionEvent){
+        Image imageNeighborLeft = new Image(String.valueOf(HelloApplication.class.getResource(players.get(currentPlayer).getVoisinGauche().getWonderDeck().get(0).imageResource)));
+        ImageViewLeftNeighbor.setImage(imageNeighborLeft);
+        players.get(currentPlayer).getWonderDeck().remove(0);
+        nextPlayer();
+    }
+
+    private void nextPlayer(){
+        if(currentPlayer == players.size() - 1){
+            currentPlayer = 0;
+        }else{
+            currentPlayer++;
+        }
     }
 
     public void onExitButtonAction(ActionEvent actionEvent) {
