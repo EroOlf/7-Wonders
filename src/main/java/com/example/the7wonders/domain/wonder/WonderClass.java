@@ -21,6 +21,10 @@ public abstract class WonderClass {
         return wonder;
     }
 
+    public List<Piece> getPieces(){
+        return pieces;
+    }
+
     public String getName(){
         return wonder.frenchName;
     }
@@ -37,19 +41,16 @@ public abstract class WonderClass {
      * @param cards : les cartes possédées par le joueur
      *
      */
-    public void returnPiece(List<CardType> cards, Player p){
-        int resourceWood = 0;
+    public void returnPiece(List<CardType> cards, WonderClass wc, Player pl){
+        /*int resourceWood = 0;
         int resourcePaper = 0;
         int resourceBrick = 0;
         int resourceStone = 0;
         int resourceGlass = 0;
-        int resourceGold = 0;
-        for(CardType c : cards){
-            if(c.cardCategory == CardCategory.MaterialCard){
-                /*switch(c.material){
-                    case Material.Brick :
+        int resourceGold = 0;*/
+        for(Piece p : wc.getPieces()){
+            if(p.constructPiece()){
 
-                }*/
             }
         }
     }

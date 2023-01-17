@@ -70,6 +70,7 @@ public class Player {
         this.materials.replace(mat, oldVal+nbMaterial);
     }
 
-
-
+    public HashMap<Material, Integer> getMaterials() {
+        return materials;
+    }
 }

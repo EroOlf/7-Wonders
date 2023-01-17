@@ -6,6 +6,7 @@ import com.example.the7wonders.domain.game.Player;
 import com.example.the7wonders.domain.game.Table;
 import com.example.the7wonders.domain.cards.*;
 import com.example.the7wonders.*;
+import com.example.the7wonders.domain.wonder.WonderClass;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -84,7 +85,6 @@ public class GameController {
         //displayCentralDeck();
         // Initialiser les jetons
         // Initialiser le chat
-        // Initialiser le
     }
 
     private static void displayPlayers(){
@@ -107,7 +107,7 @@ public class GameController {
             root.getChildren().add(imageViewCard);
         }
     }
-    
+
     public void centralDeckClick(ActionEvent actionEvent) {
         CardType card = centralDeck.get(0);
         Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
@@ -148,6 +148,11 @@ public class GameController {
         players.get(currentPlayer).setShieldCount(card.shieldCount);
         players.get(currentPlayer).setMaterials(card.material, 1);
         Game.getContext().getTable().setCornCount(card.cornCount);
+    }
+
+    private void constructWonder(){
+        WonderClass wonderPlayer = players.get(currentPlayer).getWonder();
+        wonderPlayer.constructWonder(root);
     }
 
     public void onExitButtonAction(ActionEvent actionEvent) {
