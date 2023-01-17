@@ -50,6 +50,9 @@ public class GameController {
     @FXML
     private ImageView ImageViewLeftNeighbor = new ImageView();
 
+    @FXML
+    private VBox rootVBox;
+
     //atribut name dans le player
 
     public static void initializeGame()  {
@@ -116,6 +119,14 @@ public class GameController {
         centralDeck.remove(0);
         nextPlayer();
     }
+
+    @FXML
+    protected void Movetoplayer() {
+        rootVBox.setTranslateX(-10);
+        rootVBox.setTranslateY(-30);
+    }
+
+
 
     public void playerDeckClick(ActionEvent actionEvent){
         CardType card = players.get(currentPlayer).getWonderDeck().get(0);
