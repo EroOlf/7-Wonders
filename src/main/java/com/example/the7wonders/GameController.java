@@ -37,7 +37,6 @@ public class GameController {
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
     private static List<CardType> centralDeck = new ArrayList<>();
-    private static int cptCentralDeck = 0;
 
     private static int currentPlayer = 0;
     private static final int nbPlayers = Game.getContext().getNbPlayers();
@@ -108,34 +107,13 @@ public class GameController {
             root.getChildren().add(imageViewCard);
         }
     }
-
-  /*  private static void displayCentralDeck(){
-        System.out.println("Display Central Deck");
-        Image imageQuestion = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
-        ImageView imageViewQuestion = new ImageView(imageQuestion);
-        root.getChildren().add(imageViewQuestion);
-        Button boutonPioche = new Button("Pioche");
-        root.getChildren().add(boutonPioche);
-        boutonPioche.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                root.getChildren().remove(imageViewQuestion);
-                Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)), 200,300 ,false,true);
-                ImageView imageViewCentralDeckCard = new ImageView(imageCentralDeckCard);
-                root.getChildren().add(imageViewCentralDeckCard);
-                centralDeck.remove(cptCentralDeck);
-                cptCentralDeck++;
-            }
-        });
-    } */
-
-
+    
     public void centralDeckClick(ActionEvent actionEvent) {
-        Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
-        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(cptCentralDeck).imageResource)));
+        CardType card = centralDeck.get(0);
+        Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
+        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
         imageViewCentralDeck.setImage(imageCentralDeckCard);
-        centralDeck.remove(cptCentralDeck);
-        cptCentralDeck++;
+        centralDeck.remove(0);
         nextPlayer();
     }
 
@@ -143,17 +121,16 @@ public class GameController {
         CardType card = players.get(currentPlayer).getWonderDeck().get(0);
         Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         imageViewPlayerDeck.setImage(imagePlayerDeck);
-        players.get(currentPlayer).setLaurelCount(card.laurelCount);
-        players.get(currentPlayer).setShieldCount(card.shieldCount);
-        players.get(currentPlayer).setMaterials(card.material, 1);
-        Game.getContext().getTable().setCornCount(card.cornCount);
+        giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
         nextPlayer();
     }
 
     public void NeighborLeftDeckClick(ActionEvent actionEvent){
-        Image imageNeighborLeft = new Image(String.valueOf(HelloApplication.class.getResource(players.get(currentPlayer).getVoisinGauche().getWonderDeck().get(0).imageResource)));
+        CardType card = players.get(currentPlayer).getVoisinGauche().getWonderDeck().get(0);
+        Image imageNeighborLeft = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
+        giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
         nextPlayer();
     }
@@ -164,6 +141,13 @@ public class GameController {
         }else{
             currentPlayer++;
         }
+    }
+
+    private void giveResources(CardType card){
+        players.get(currentPlayer).setLaurelCount(card.laurelCount);
+        players.get(currentPlayer).setShieldCount(card.shieldCount);
+        players.get(currentPlayer).setMaterials(card.material, 1);
+        Game.getContext().getTable().setCornCount(card.cornCount);
     }
 
     public void onExitButtonAction(ActionEvent actionEvent) {
