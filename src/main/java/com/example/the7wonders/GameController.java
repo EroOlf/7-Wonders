@@ -143,9 +143,12 @@ public class GameController {
     }
 
     private void giveResources(CardType card){
+        Material materialt = card.material;
+        if(materialt != null){
+            players.get(currentPlayer).setMaterials(card.material, 1);
+        }
         players.get(currentPlayer).setLaurelCount(card.laurelCount);
         players.get(currentPlayer).setShieldCount(card.shieldCount);
-        players.get(currentPlayer).setMaterials(card.material, 1);
         Game.getContext().getTable().setCornCount(card.cornCount);
     }
 
