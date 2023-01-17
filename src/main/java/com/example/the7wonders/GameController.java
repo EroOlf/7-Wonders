@@ -191,7 +191,7 @@ public class GameController {
                 case "material:brick":
                     //imagePath = new Image("card-material-brick-women.png");
                     //giveResources(CardMaterialBrick);
-                    Image image2 = new Image(new File("card-material-paper-women.png").toURI().toString());
+                    Image image2 = new Image(new File("card-material-brick-women.png").toURI().toString());
                     ImageView imgView2 = new ImageView(image2);
                     imageContainer.getChildren().clear();
                     imageContainer.getChildren().add(imgView2);
