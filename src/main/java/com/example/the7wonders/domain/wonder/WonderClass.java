@@ -1,10 +1,11 @@
 package com.example.the7wonders.domain.wonder;
 
 
-import com.example.the7wonders.Player;
 import com.example.the7wonders.domain.cards.*;
+import com.example.the7wonders.domain.game.Player;
 import javafx.scene.layout.FlowPane;
 
+import java.util.HashMap;
 import java.util.List;
 
 public abstract class WonderClass {
@@ -15,7 +16,6 @@ public abstract class WonderClass {
         this.wonder = wonder;
         this.pieces = pieces;
     }
-
 
     public Wonder getWonder() {
         return wonder;
@@ -49,7 +49,11 @@ public abstract class WonderClass {
         int resourceGlass = 0;
         int resourceGold = 0;*/
         for(Piece p : wc.getPieces()){
-            if(p.constructPiece()){
+            if(p.constructPiece(pl.getMaterials(), pl)){
+                pl.setLaurelCount(p.getNbGloire());
+                //Enlever les matériaux
+
+                // Enlever la piece
 
             }
         }
