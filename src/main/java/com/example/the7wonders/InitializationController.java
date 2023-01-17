@@ -236,7 +236,7 @@ public class InitializationController {
                 WonderClass D = new Halicarnasse();
                 System.out.println(D.getName());
                 return D;
-            case "Olympe":
+            case "Olympie":
                 WonderClass E = new Olympie();
                 System.out.println(E.getName());
                 return E;
