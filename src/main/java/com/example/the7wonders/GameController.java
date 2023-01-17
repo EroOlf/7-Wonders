@@ -121,7 +121,8 @@ public class GameController {
     }
 
     @FXML
-    protected void Movetoplayer() {
+    protected void Movetoplayer(CardType card) {
+        System.out.println("Vous avez choisi cette carte");
         rootVBox.setTranslateX(-10);
         rootVBox.setTranslateY(-30);
     }
