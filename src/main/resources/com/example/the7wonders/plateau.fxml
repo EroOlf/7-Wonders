@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.GameController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.GameController">
    <children>
       <AnchorPane layoutX="-14.0" layoutY="-13.0" prefHeight="498.0" prefWidth="722.0">
          <children>
             <Pane layoutX="6.0" layoutY="28.0" prefHeight="486.0" prefWidth="716.0">
                <children>
-                  <ImageView fitHeight="568.0" fitWidth="786.0" layoutX="-55.0" layoutY="-55.0">
+                  <ImageView fx:id="Ressourceid" fitHeight="568.0" fitWidth="786.0" layoutX="-55.0" layoutY="-55.0">
                      <image>
                         <Image url="@images/backgrounds/fond_parquet.jpg" />
                      </image>
@@ -201,7 +204,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8c00ff" onAction="#NeighborLeftDeckClick">
+                  <Button layoutX="88.0" layoutY="351.0" mnemonicParsing="false" onAction="#NeighborLeftDeckClick" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#8c00ff">
                      <font>
                         <Font size="8.0" />
                      </font>
@@ -221,7 +224,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#00ff4d" onAction="#playerDeckClick">
+                  <Button layoutX="265.0" layoutY="351.0" mnemonicParsing="false" onAction="#playerDeckClick" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#00ff4d">
                      <font>
                         <Font size="8.0" />
                      </font>
@@ -251,12 +254,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="51.0" fitWidth="41.0" layoutX="166.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/cards/card-material-brick-women.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="21.0" fitWidth="66.0" layoutX="147.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="21.0" fitWidth="66.0" layoutX="152.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/backgrounds/encadrénom.jpeg" />
                      </image>
@@ -291,6 +289,7 @@
                         <Image url="@images/backgrounds/encadrénom.jpeg" />
                      </image>
                   </ImageView>
+                  <Pane fx:id="imageContainer" layoutX="177.0" layoutY="94.0" prefHeight="131.0" prefWidth="113.0" />
                </children>
             </Pane>
             <VBox prefHeight="200.0" prefWidth="100.0" />
