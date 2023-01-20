@@ -15,13 +15,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.*;
-import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,14 +26,13 @@ import java.util.List;
 
 
 import static com.example.the7wonders.HelloApplication.stage;
-import static com.example.the7wonders.domain.cards.CardType.*;
 
 public class GameController {
     // Pour l'instant juste afficher les merveilles
     @FXML
-    private static FlowPane root = new FlowPane();
+    private static final FlowPane root = new FlowPane();
     @FXML
-    private static Label infoLabel = new Label();
+    private static final Label infoLabel = new Label();
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
@@ -44,7 +40,7 @@ public class GameController {
 
     private static int currentPlayer = 0;
     private static final int nbPlayers = Game.getContext().getNbPlayers();
-    private static List<Player> players = Game.getContext().getPlayers();
+    private static final List<Player> players = Game.getContext().getPlayers();
 
 
     @FXML
@@ -126,15 +122,15 @@ public class GameController {
         }
     }
 
-    public void centralDeckClick(ActionEvent actionEvent) {
+    public void centralDeckClick() {
         CardType card = centralDeck.get(0);
         Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
-        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
+        System.out.println(HelloApplication.class.getResource(centralDeck.get(0).imageResource));
         imageViewCentralDeck.setImage(imageCentralDeckCard);
         centralDeck.remove(0);
     }
 
-    public void playerDeckClick(ActionEvent actionEvent){
+    public void playerDeckClick(){
         CardType card = players.get(currentPlayer).getWonderDeck().get(0);
         Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         imageViewPlayerDeck.setImage(imagePlayerDeck);
@@ -142,7 +138,7 @@ public class GameController {
         players.get(currentPlayer).getWonderDeck().remove(0);
     }
 
-    public void NeighborLeftDeckClick(ActionEvent actionEvent){
+    public void NeighborLeftDeckClick(){
         CardType card = players.get(currentPlayer).getVoisinGauche().getWonderDeck().get(0);
         Image imageNeighborLeft = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
@@ -150,7 +146,7 @@ public class GameController {
         players.get(currentPlayer).getWonderDeck().remove(0);
     }
 
-    public void scienceTokenDeckClick(ActionEvent actionEvent){
+    public void scienceTokenDeckClick(){
         // Récupérer la liste des tokens
         // Récupérer le 1er de la liste
         ProgressToken pT = Game.getContext().getTable().getTokens().getProgressTokens().get(0);
@@ -194,7 +190,7 @@ public class GameController {
         nextPlayer();
     }
 
-    public void onExitButtonAction(ActionEvent actionEvent) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+    public void onExitButtonAction() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage = stage;
