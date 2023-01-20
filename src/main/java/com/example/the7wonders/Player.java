@@ -96,9 +96,7 @@ public class Player {
                 throw new Exception("Merveille sans deck");
         }
     }
-    public String getName(){
-        return name;
-    }
+
     private void cardsListToCards(List<CardDecks.CardTypeQuantity> deck){
         for(CardDecks.CardTypeQuantity c : deck){
             for(int i = 0; i < c.quantity; ++i){

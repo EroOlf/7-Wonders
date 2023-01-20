@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -32,6 +33,11 @@ public class GameController {
     private static FlowPane root = new FlowPane();
     @FXML
     private static Label infoLabel = new Label();
+
+    @FXML
+    private static Label nameplayer1 = new Label();
+    @FXML
+    private static Label nameplayer2 = new Label();
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
@@ -87,8 +93,9 @@ public class GameController {
 
     private static void displayPlayers(){
         for(Player p : players){
-            //Récupérer le nom
-            p.getName();
+            // Récupérer le nom des joueurs et l'afficher sur le plateau
+            nameplayer1.setText(p.getName());
+            nameplayer2.setText(p.getName());
             // Afficher les meveilles en construction
             p.getWonder();
             System.out.println(p.getWonder().getName());
@@ -99,7 +106,7 @@ public class GameController {
 
     private static void displayCard(Player p){
         List<CardType> deck = p.getWonderDeck();
-        Image imageCarBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder()+".png")), 200,300 ,false,true);
+        Image imageCardBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder()+".png")), 200,300 ,false,true);
 
         for(CardType c : deck){
             Image imageCard = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
