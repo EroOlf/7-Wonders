@@ -52,6 +52,7 @@ public class Piece {
                 int resourcePlayers = entry.getValue();
                 if(nbRessources >= resourcePlayers){
                     // Construire la carte
+
                     // Supprimer les matériaux des players
                     pl.setMaterials(entry.getKey(), entry.setValue(resourcePlayers - nbRessources));
                     pl.setLaurelCount(nbGloire);

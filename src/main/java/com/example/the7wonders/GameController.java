@@ -80,7 +80,6 @@ public class GameController {
         //displayCentralDeck();
         // Initialiser les jetons
         // Initialiser le chat
-        // Initialiser le
     }
 
     private static void displayPlayers(){
@@ -110,6 +109,7 @@ public class GameController {
         System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
         imageViewCentralDeck.setImage(imageCentralDeckCard);
         centralDeck.remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
 
     }
@@ -120,6 +120,7 @@ public class GameController {
         imageViewPlayerDeck.setImage(imagePlayerDeck);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
 
     }
@@ -130,6 +131,7 @@ public class GameController {
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
 
     }

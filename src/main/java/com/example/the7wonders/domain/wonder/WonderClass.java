@@ -41,22 +41,13 @@ public abstract class WonderClass {
      * @param cards : les cartes possédées par le joueur
      *
      */
-    public void returnPiece(List<CardType> cards, WonderClass wc, Player pl){
-        /*int resourceWood = 0;
-        int resourcePaper = 0;
-        int resourceBrick = 0;
-        int resourceStone = 0;
-        int resourceGlass = 0;
-        int resourceGold = 0;*/
-        for(Piece p : wc.getPieces()){
+    public String returnPiece(Player pl){
+        for(Piece p : this.getPieces()){
             if(p.constructPiece(pl.getMaterials(), pl)){
-                pl.setLaurelCount(p.getNbGloire());
-                //Enlever les matériaux
-
-                // Enlever la piece
-
+                return p.getPathImage();
             }
         }
+        return "";
     }
 
 }
