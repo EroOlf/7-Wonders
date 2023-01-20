@@ -154,7 +154,7 @@
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="214.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="216.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
@@ -169,7 +169,7 @@
                         <Image url="@images/tokens/token-conflict-war.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="245.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="242.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
@@ -289,7 +289,11 @@
                         <Image url="@images/backgrounds/encadrénom.jpeg" />
                      </image>
                   </ImageView>
-                  <Pane fx:id="imageContainer" layoutX="177.0" layoutY="94.0" prefHeight="131.0" prefWidth="113.0" />
+                  <ImageView fx:id="imageView1" fitHeight="49.0" fitWidth="43.0" layoutX="231.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/cards/card-back/card-back-question.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <VBox prefHeight="200.0" prefWidth="100.0" />
