@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Player {
+
     private String name;
     private Player voisinDroite;
     private Player voisinGauche;
@@ -35,6 +36,10 @@ public class Player {
         materials.put(Material.Stone, 0);
         materials.put(Material.Wood, 0);
         //initializeWonderDeck();
+    }
+
+    public String getName(){
+        return name;
     }
 
     public WonderClass getWonder() {

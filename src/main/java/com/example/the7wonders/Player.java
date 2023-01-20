@@ -67,7 +67,7 @@ public class Player {
         return  wonderDeck;
     }
 
-    // /!\ Normalement, le dexk de merveille devrait être associé à la merveille mais code du prof ne fonctionne pas comme ça
+    // /!\ Normalement, le deck de merveille devrait être associé à la merveille mais le code du prof ne fonctionne pas comme ça
     private void initializeWonderDeck() throws Exception {
         wonderDeck = new ArrayList<>();
         switch (wonder.frenchName){
@@ -96,7 +96,9 @@ public class Player {
                 throw new Exception("Merveille sans deck");
         }
     }
-
+    public String getName(){
+        return name;
+    }
     private void cardsListToCards(List<CardDecks.CardTypeQuantity> deck){
         for(CardDecks.CardTypeQuantity c : deck){
             for(int i = 0; i < c.quantity; ++i){

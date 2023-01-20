@@ -87,6 +87,8 @@ public class GameController {
 
     private static void displayPlayers(){
         for(Player p : players){
+            //Récupérer le nom
+            p.getName();
             // Afficher les meveilles en construction
             p.getWonder();
             System.out.println(p.getWonder().getName());
