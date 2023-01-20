@@ -38,11 +38,6 @@ public class GameController {
     @FXML
     private static Label infoLabel = new Label();
 
-    @FXML
-    private static Label nameplayer1;
-    @FXML
-    private static Label nameplayer2;
-
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
     private static List<CardType> centralDeck = new ArrayList<>();
@@ -52,9 +47,7 @@ public class GameController {
     private static List<Player> players = Game.getContext().getPlayers();
 
 
-    @FXML
     private static Button nameplayer1 = new Button();
-    @FXML
     private static Button nameplayer2 = new Button();
 
     @FXML
