@@ -1,6 +1,4 @@
 package com.example.the7wonders;
-
-
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.game.Player;
 import com.example.the7wonders.domain.cards.*;
@@ -12,19 +10,15 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 import static com.example.the7wonders.HelloApplication.stage;
-import static com.example.the7wonders.domain.cards.CardType.*;
 
 public class GameController {
     // Pour l'instant juste afficher les merveilles
@@ -32,6 +26,7 @@ public class GameController {
     private static FlowPane root = new FlowPane();
     @FXML
     private static Label infoLabel = new Label();
+
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
@@ -41,14 +36,36 @@ public class GameController {
     private static final int nbPlayers = Game.getContext().getNbPlayers();
     private static List<Player> players = Game.getContext().getPlayers();
 
+
     @FXML
     private ImageView imageViewCentralDeck = new ImageView();
     @FXML
     private ImageView imageViewPlayerDeck = new ImageView();
     @FXML
     private ImageView ImageViewLeftNeighbor = new ImageView();
+    @FXML
+    private ImageView imageView1 = new ImageView();
 
     //atribut name dans le player
+
+
+
+    private void setRessources(CardType type) {
+        //CardType card = centralDeck.get(0);
+        //String imageResource1 = type.imageResource;
+
+        Image Ressource1 = new Image(String.valueOf(HelloApplication.class.getResource(type.imageResource)));
+        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
+        imageView1.setImage(Ressource1);
+        centralDeck.remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
+
+
+       // String Ressource = type.imageResource;
+        //mageView1.setImage(Ressource);
+       // imageView.setImage(new Image(imageResource));
+        //imageView1.setImage(new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back.png"))));
+    }
 
     public static void initializeGame()  {
         //public void onHelloButtonClick(ActionEvent event) {
@@ -68,7 +85,7 @@ public class GameController {
             }
             initializeData();
         }
-        
+
 
     private static void initializeData(){
         Game.getContext().shuffleCentralDeck();
@@ -79,6 +96,7 @@ public class GameController {
         }
         // Initialiser les joueurs
         displayPlayers();
+
         // Intialiser le deck central
         //displayCentralDeck();
         // Initialiser les jetons
@@ -87,8 +105,6 @@ public class GameController {
 
     private static void displayPlayers(){
         for(Player p : players){
-            //Récupérer le nom
-            p.getName();
             // Afficher les meveilles en construction
             p.getWonder();
             System.out.println(p.getWonder().getName());
@@ -99,7 +115,7 @@ public class GameController {
 
     private static void displayCard(Player p){
         List<CardType> deck = p.getWonderDeck();
-        Image imageCarBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder()+".png")), 200,300 ,false,true);
+        Image imageCardBack = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-"+ p.getWonder()+".png")), 200,300 ,false,true);
 
         for(CardType c : deck){
             Image imageCard = new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back-question.png")), 200,300 ,false,true);
@@ -107,7 +123,7 @@ public class GameController {
             root.getChildren().add(imageViewCard);
         }
     }
-    
+
     public void centralDeckClick(ActionEvent actionEvent) {
         CardType card = centralDeck.get(0);
         Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
@@ -116,6 +132,7 @@ public class GameController {
         centralDeck.remove(0);
         players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
+        setRessources(card);
 
     }
 
@@ -127,7 +144,7 @@ public class GameController {
         players.get(currentPlayer).getWonderDeck().remove(0);
         players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
-
+        setRessources(card);
     }
 
     public void NeighborLeftDeckClick(ActionEvent actionEvent){
@@ -138,7 +155,7 @@ public class GameController {
         players.get(currentPlayer).getWonderDeck().remove(0);
         players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
         nextPlayer();
-
+        setRessources(card);
     }
 
     private void nextPlayer(){
@@ -168,105 +185,4 @@ public class GameController {
         stage.setScene(scene);
         stage.show();
     }
-
-
-    public class DisplayCardImageController {
-
-        @FXML
-        private Pane imageViewCentralDeck1; // référence au JPanel qui contiendra l'image
-        private Image imagePath;
-
-        public void chooseCard(String card) {
-            switch (card) {
-                case "material:wood":
-                   // imagePath = new Image("card-material-wood-lumberjack.png");
-                   // giveResources(CardMaterialWood);
-                   // ImageIcon imageIcon = new ImageIcon(new File(String.valueOf(imagePath)).getAbsolutePath());
-                    Image image = new Image(new File("card-material-wood-lumberjack.png").toURI().toString());
-                    ImageView imgView = new ImageView(image);
-                    imageViewCentralDeck1.getChildren().clear();
-                    imageViewCentralDeck1.getChildren().add(imgView);
-                    break;
-                case "material:paper":
-                    //imagePath = new Image("card-material-paper-women.png");
-                    //giveResources(CardMaterialPaper);
-                    Image image1 = new Image(new File("card-material-paper-women.png").toURI().toString());
-                    ImageView imgView1 = new ImageView(image1);
-                    imageViewCentralDeck1.getChildren().clear();
-                    imageViewCentralDeck1.getChildren().add(imgView1);
-                    break;
-                case "material:brick":
-                    //imagePath = new Image("card-material-brick-women.png");
-                    //giveResources(CardMaterialBrick);
-                    Image image2 = new Image(new File("card-material-brick-women.png").toURI().toString());
-                    ImageView imgView2 = new ImageView(image2);
-                    imageViewCentralDeck1.getChildren().clear();
-                    imageViewCentralDeck1.getChildren().add(imgView2);
-                    break;
-                case "material:stone":
-                    //imagePath = new Image("card-material-stone-stonecutter.png");
-                    //giveResources(CardMaterialStone);
-                    Image image3 = new Image(new File("card-material-stone-stonecutter.png").toURI().toString());
-                    ImageView imgView3 = new ImageView(image3);
-                    imageViewCentralDeck1.getChildren().clear();
-                    imageViewCentralDeck1.getChildren().add(imgView3);
-
-                    break;
-                case "material:glass":
-                    imagePath = new Image("card-material-glass-women.png");
-                    giveResources(CardMaterialGlass);
-                    Image image4 = new Image(new File("card-material-glass-women.png").toURI().toString());
-                    ImageView imgView4 = new ImageView(image4);
-                    imageViewCentralDeck1.getChildren().clear();
-                    imageViewCentralDeck1.getChildren().add(imgView4);
-
-                    break;
-                case "material:gold":
-                    imagePath = new Image("card-material-brick-women.png");
-                    giveResources(CardMaterialGold);
-                    break;
-                case "science:law":
-                    imagePath = new Image("card-progress-law.png");
-                    giveResources(CardScienceLaw);
-                    break;
-                case "science:mechanic":
-                    imagePath = new Image("card-progress-mechanic.png");
-                    giveResources(CardScienceMechanic);
-                    break;
-                case "science:architect":
-                    imagePath = new Image("card-progress-architect.png");
-                    giveResources(CardScienceArchitect);
-                    break;
-                case "war:barbarian":
-                    imagePath = new Image("card-war-barbarian-1corn.png");
-                    giveResources(CardWar_barbarian);
-                    break;
-                case "war:centurion":
-                    imagePath = new Image("card-war-centurion.png");
-                    giveResources(CardWar_centurion);
-                    break;
-                case "war:archer":
-                    imagePath = new Image("card-war-archer-2corns.png");
-                    giveResources(CardWar_archer);
-                    break;
-                case "politic:emperor":
-                    imagePath = new Image("card-politic-emperor-3laurel.png");
-                    giveResources(CardPolitic_emperor);
-                    break;
-                case "politic:cat":
-                    imagePath = new Image("card-politic-women-2laurel-cat.png");
-                    giveResources(CardPolitic_cat);
-                    break;
-                default:
-                    System.out.println("erreur");;
-                    break;
-            }
-
-            ImageIcon imageIcon = new ImageIcon(new File(String.valueOf(imagePath)).getAbsolutePath());
-            /*// Définit l'image à afficher
-            Pane.removeAll();
-            Pane.add(new JLabel(imageIcon));
-            Pane.revalidate();
-            Pane.repaint();*/
-
-}}}
+}
