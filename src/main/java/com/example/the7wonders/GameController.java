@@ -14,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import static com.example.the7wonders.HelloApplication.stage;
 import static com.example.the7wonders.domain.cards.CardType.*;
 
 public class GameController {
@@ -53,9 +56,9 @@ public class GameController {
                 //Stage stage = new Stage();
                 FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
                 Scene scene1 = new Scene(fxmlLoader1.load(), 720, 500);
-                HelloApplication.stage.setTitle("Menu");
-                HelloApplication.stage.setScene(scene1);
-                HelloApplication.stage.show();
+                stage.setTitle("Menu");
+                stage.setScene(scene1);
+                stage.show();
                 initializeData();
                 //((Node) (event.getSource())).getScene().getWindow().hide();
                 //HelloApplication.stage.close();
@@ -154,20 +157,21 @@ public class GameController {
         Game.getContext().getTable().setCornCount(card.cornCount);
     }
 
-    public void onExitButtonAction(ActionEvent actionEvent) {
-
+    public void onExitButtonAction(ActionEvent actionEvent) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+        FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage = stage;
+        Game.play();
+        stage.setTitle("7 Wonders Architects");
+        stage.setScene(scene);
+        stage.show();
     }
-
-
-
-
-
 
 
     public class DisplayCardImageController {
 
         @FXML
-        private Pane imageContainer; // référence au JPanel qui contiendra l'image
+        private Pane imageViewCentralDeck1; // référence au JPanel qui contiendra l'image
         private Image imagePath;
 
         public void chooseCard(String card) {
@@ -176,40 +180,44 @@ public class GameController {
                    // imagePath = new Image("card-material-wood-lumberjack.png");
                    // giveResources(CardMaterialWood);
                    // ImageIcon imageIcon = new ImageIcon(new File(String.valueOf(imagePath)).getAbsolutePath());
-
                     Image image = new Image(new File("card-material-wood-lumberjack.png").toURI().toString());
                     ImageView imgView = new ImageView(image);
-                    imageContainer.getChildren().clear();
-                    imageContainer.getChildren().add(imgView);
-                    
-
+                    imageViewCentralDeck1.getChildren().clear();
+                    imageViewCentralDeck1.getChildren().add(imgView);
                     break;
                 case "material:paper":
                     //imagePath = new Image("card-material-paper-women.png");
                     //giveResources(CardMaterialPaper);
-
                     Image image1 = new Image(new File("card-material-paper-women.png").toURI().toString());
                     ImageView imgView1 = new ImageView(image1);
-                    imageContainer.getChildren().clear();
-                    imageContainer.getChildren().add(imgView1);
+                    imageViewCentralDeck1.getChildren().clear();
+                    imageViewCentralDeck1.getChildren().add(imgView1);
                     break;
                 case "material:brick":
                     //imagePath = new Image("card-material-brick-women.png");
                     //giveResources(CardMaterialBrick);
                     Image image2 = new Image(new File("card-material-brick-women.png").toURI().toString());
                     ImageView imgView2 = new ImageView(image2);
-                    imageContainer.getChildren().clear();
-                    imageContainer.getChildren().add(imgView2);
-
-
+                    imageViewCentralDeck1.getChildren().clear();
+                    imageViewCentralDeck1.getChildren().add(imgView2);
                     break;
                 case "material:stone":
-                    imagePath = new Image("card-material-stone-stonecutter.png");
-                    giveResources(CardMaterialStone);
+                    //imagePath = new Image("card-material-stone-stonecutter.png");
+                    //giveResources(CardMaterialStone);
+                    Image image3 = new Image(new File("card-material-stone-stonecutter.png").toURI().toString());
+                    ImageView imgView3 = new ImageView(image3);
+                    imageViewCentralDeck1.getChildren().clear();
+                    imageViewCentralDeck1.getChildren().add(imgView3);
+
                     break;
                 case "material:glass":
                     imagePath = new Image("card-material-glass-women.png");
                     giveResources(CardMaterialGlass);
+                    Image image4 = new Image(new File("card-material-glass-women.png").toURI().toString());
+                    ImageView imgView4 = new ImageView(image4);
+                    imageViewCentralDeck1.getChildren().clear();
+                    imageViewCentralDeck1.getChildren().add(imgView4);
+
                     break;
                 case "material:gold":
                     imagePath = new Image("card-material-brick-women.png");
