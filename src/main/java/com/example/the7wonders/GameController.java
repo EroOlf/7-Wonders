@@ -42,10 +42,9 @@ public class GameController {
 
 
     @FXML
-    private static Button nameplayer1;
-
+    private static Button nameplayer1 = new Button();
     @FXML
-    private static Button nameplayer2;
+    private static Button nameplayer2 = new Button();
 
     @FXML
     private ImageView imageViewCentralDeck = new ImageView();
@@ -94,6 +93,7 @@ public class GameController {
     private static void displayPlayers(){
         for(Player p : players){
             // Afficher les meveilles en construction
+            System.out.println("ate");
             for (Button button : Arrays.asList(nameplayer1, nameplayer2)) {
                 button.setText(p.getName());
             }
@@ -112,14 +112,6 @@ public class GameController {
             ImageView imageViewCard = new ImageView(imageCard);
             root.getChildren().add(imageViewCard);
         }
-    }
-
-    public static void setNameplayer2(Button nameplayer2) {
-        GameController.nameplayer2 = nameplayer2;
-    }
-
-    public static void setNameplayer1(Button nameplayer1) {
-        GameController.nameplayer1 = nameplayer1;
     }
 
     public void centralDeckClick(ActionEvent actionEvent) {
