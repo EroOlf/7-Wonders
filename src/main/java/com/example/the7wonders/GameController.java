@@ -93,7 +93,6 @@ public class GameController {
     private static void displayPlayers(){
         for(Player p : players){
             // Afficher les meveilles en construction
-            System.out.println("ate");
             for (Button button : Arrays.asList(nameplayer1, nameplayer2)) {
                 button.setText(p.getName());
             }
