@@ -54,13 +54,4 @@ import java.io.IOException;
             launch();
 
         }
-
-        @FXML
-        public javafx.scene.control.Button onExitButton;
-        
-        @FXML
-        private void onExitButtonAction() {
-            Stage stage = (Stage) onExitButton.getScene().getWindow();
-            stage.close();
-        }
     }

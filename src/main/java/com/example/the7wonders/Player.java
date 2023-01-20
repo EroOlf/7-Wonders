@@ -67,7 +67,7 @@ public class Player {
         return  wonderDeck;
     }
 
-    // /!\ Normalement, le dexk de merveille devrait être associé à la merveille mais code du prof ne fonctionne pas comme ça
+    // /!\ Normalement, le deck de merveille devrait être associé à la merveille mais le code du prof ne fonctionne pas comme ça
     private void initializeWonderDeck() throws Exception {
         wonderDeck = new ArrayList<>();
         switch (wonder.frenchName){
