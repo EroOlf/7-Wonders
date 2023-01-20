@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -290,12 +291,29 @@
                      </image>
                   </ImageView>
                   <Pane fx:id="imageContainer" layoutX="177.0" layoutY="94.0" prefHeight="131.0" prefWidth="113.0" />
+                  <VBox layoutX="342.0" layoutY="444.0" prefHeight="23.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="nameplayer2" textFill="#433d32" translateX="29.0" translateY="1.0">
+                           <font>
+                              <Font name="Cochin" size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="161.0" layoutY="447.0" prefHeight="15.0" prefWidth="62.0" translateX="8.0" translateY="-4.0">
+                     <children>
+                        <Label fx:id="nameplayer1" prefHeight="17.0" prefWidth="62.0" text="NAME" textFill="#433d32">
+                           <font>
+                              <Font name="Cochin" size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
             </Pane>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
       </AnchorPane>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="34.0" prefWidth="100.0">
          <children>
             <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onExitButtonAction" prefHeight="22.0" prefWidth="53.0" style="-fx-background-color: #e4d4b7;" text="EXIT" textAlignment="CENTER" textFill="#a88038" translateX="5.0" translateY="10.0">
                <font>

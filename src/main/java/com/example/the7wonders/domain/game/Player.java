@@ -6,6 +6,7 @@ import com.example.the7wonders.domain.wonder.*;
 import java.util.*;
 
 public class Player {
+
     private String name;
     private Player voisinDroite;
     private Player voisinGauche;
@@ -45,6 +46,10 @@ public class Player {
         materials.put(Material.Paper, 0);
         materials.put(Material.Stone, 0);
         materials.put(Material.Wood, 0);
+    }
+
+    public String getName(){
+        return name;
     }
 
     public WonderClass getWonder() {
