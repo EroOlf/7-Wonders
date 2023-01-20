@@ -109,9 +109,6 @@ public class GameController {
         System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
         imageViewCentralDeck.setImage(imageCentralDeckCard);
         centralDeck.remove(0);
-        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
-        nextPlayer();
-
     }
 
     public void playerDeckClick(ActionEvent actionEvent){
@@ -120,9 +117,6 @@ public class GameController {
         imageViewPlayerDeck.setImage(imagePlayerDeck);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
-        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
-        nextPlayer();
-
     }
 
     public void NeighborLeftDeckClick(ActionEvent actionEvent){
@@ -131,12 +125,9 @@ public class GameController {
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
-        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
-        nextPlayer();
-
     }
 
-    private void nextPlayer(){
+    private static void nextPlayer(){
         if(currentPlayer == players.size() - 1){
             currentPlayer = 0;
         }else{
@@ -144,14 +135,29 @@ public class GameController {
         }
     }
 
-    private void giveResources(CardType card){
+    private static void enablePickToken(){
+        //Activer le bouton de pioche token
+    }
+
+    private static void giveResources(CardType card){
+        Player p = players.get(currentPlayer);
         Material materialt = card.material;
+        ScienceCategory science = card.scienceCategory;
         if(materialt != null){
-            players.get(currentPlayer).setMaterials(card.material, 1);
+            p.setMaterials(card.material, 1);
+            p.getWonder().returnPiece(players.get(currentPlayer));
         }
-        players.get(currentPlayer).setLaurelCount(card.laurelCount);
-        players.get(currentPlayer).setShieldCount(card.shieldCount);
+        if(science != null){
+            p.setScienceTokens(card.scienceCategory, 1);
+            // Si le joueur peut choisir un token
+            if(p.couldChooseToken()){
+                enablePickToken();
+            }
+        }
+        p.setLaurelCount(card.laurelCount);
+        p.setShieldCount(card.shieldCount);
         Game.getContext().getTable().setCornCount(card.cornCount);
+        nextPlayer();
     }
 
     public void onExitButtonAction(ActionEvent actionEvent) {
@@ -167,10 +173,10 @@ public class GameController {
     public class DisplayCardImageController {
 
         @FXML
-        private Pane imageContainer; // référence au JPanel qui contiendra l'image
-        private Image imagePath;
+        private static Pane imageContainer; // référence au JPanel qui contiendra l'image
+        private static Image imagePath;
 
-        public void chooseCard(String card) {
+        public static void chooseCard(String card) {
             switch (card) {
                 case "material:wood":
                    // imagePath = new Image("card-material-wood-lumberjack.png");

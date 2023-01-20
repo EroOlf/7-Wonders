@@ -38,7 +38,7 @@ public abstract class WonderClass {
 
     /**
      * Vérifie si on peut retourner une piece d'une merveille
-     * @param cards : les cartes possédées par le joueur
+     * @param pl : Player possédant la merveille dont on vérifie si les pièces peuvent être retournées
      *
      */
     public String returnPiece(Player pl){
