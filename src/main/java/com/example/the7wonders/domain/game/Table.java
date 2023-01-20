@@ -4,16 +4,16 @@ import com.example.the7wonders.domain.cards.*;
 import com.example.the7wonders.domain.tokens.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Table {
     private static Table table = new Table();
     // Deck central
     private List<CardType> centralDeck;
-    /*private ProgressTokens tokens;
-    private final int nbConflictTockens = 4;
+    private ProgressTokens tokens = new ProgressTokens();
+    /*private final int nbConflictTockens = 4;
     private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
-    private List<Tokens> tokens;
     private int cornCount = 0;
     //Chaaaaaaaaat
 
@@ -30,13 +30,23 @@ public class Table {
                 centralDeck.add(c.cardType);
             }
         }
+        shuffle();
     }
 
     public List<CardType> getCentralDeck(){
         return centralDeck;
     }
 
+    public ProgressTokens getTokens() {
+        return tokens;
+    }
+
     public void setCornCount(int corn){
         this.cornCount += corn;
+    }
+
+
+    private void shuffle(){
+        Collections.shuffle(tokens.getProgressTokens());
     }
 }

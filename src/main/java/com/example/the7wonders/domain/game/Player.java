@@ -55,11 +55,6 @@ public class Player {
     public WonderClass getWonder() {
         return wonder;
     }
-
-    public String getName(){
-        return name;
-    }
-
     public void setVoisinDroite(Player p){
         voisinDroite = p;
     }

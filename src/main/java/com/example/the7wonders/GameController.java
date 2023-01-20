@@ -4,6 +4,8 @@ package com.example.the7wonders;
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.game.Player;
 import com.example.the7wonders.domain.cards.*;
+import com.example.the7wonders.domain.tokens.ProgressToken;
+import com.example.the7wonders.domain.tokens.ProgressTokens;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,9 +37,9 @@ public class GameController {
     private static Label infoLabel = new Label();
 
     @FXML
-    private static Label nameplayer1 = new Label();
+    private static Label nameplayer1;
     @FXML
-    private static Label nameplayer2 = new Label();
+    private static Label nameplayer2;
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
@@ -53,6 +55,8 @@ public class GameController {
     private ImageView imageViewPlayerDeck = new ImageView();
     @FXML
     private ImageView ImageViewLeftNeighbor = new ImageView();
+    @FXML
+    private ImageView imageScienceToken = new ImageView();
 
     //atribut name dans le player
 
@@ -94,14 +98,16 @@ public class GameController {
     private static void displayPlayers(){
         for(Player p : players){
             // Récupérer le nom des joueurs et l'afficher sur le plateau
-            nameplayer1.setText(p.getName());
-            nameplayer2.setText(p.getName());
+
             // Afficher les meveilles en construction
             p.getWonder();
             System.out.println(p.getWonder().getName());
             //Afficher les pioches
             p.getWonderDeck();
         }
+        /*nameplayer1.setText(players.get(0).getName());
+        System.out.println(nameplayer1.getText());
+        nameplayer2.setText(players.get(1).getName());*/
     }
 
     private static void displayCard(Player p){
@@ -137,6 +143,17 @@ public class GameController {
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
+    }
+
+    public void scienceTokenDeckClick(ActionEvent actionEvent){
+        // Récupérer la liste des tokens
+        // Récupérer le 1er de la liste
+        ProgressToken pT = Game.getContext().getTable().getTokens().getProgressTokens().get(0);
+        Image imageScience = new Image(String.valueOf(HelloApplication.class.getResource(pT.imageResource)));
+        imageScienceToken.setImage(imageScience);
+        Game.getContext().getTable().getTokens().getProgressTokens().remove(0);
+        // Le retirer
+        // Attribuer le token et son effet au joueur
     }
 
     private static void nextPlayer(){
@@ -183,7 +200,7 @@ public class GameController {
     }
 
 
-    public class DisplayCardImageController {
+    /*public class DisplayCardImageController {
 
         @FXML
         private static Pane imageContainer; // référence au JPanel qui contiendra l'image
@@ -273,13 +290,13 @@ public class GameController {
                 default:
                     System.out.println("erreur");;
                     break;
-            }
+            }*/
 
-            ImageIcon imageIcon = new ImageIcon(new File(String.valueOf(imagePath)).getAbsolutePath());
-            /*// Définit l'image à afficher
+            //ImageIcon imageIcon = new ImageIcon(new File(String.valueOf(imagePath)).getAbsolutePath());
+            /*/ Définit l'image à afficher
             Pane.removeAll();
             Pane.add(new JLabel(imageIcon));
             Pane.revalidate();
             Pane.repaint();*/
 
-}}}
+}
