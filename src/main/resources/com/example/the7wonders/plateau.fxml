@@ -287,22 +287,22 @@
                      </image>
                   </ImageView>
                   <Pane fx:id="imageContainer" layoutX="177.0" layoutY="94.0" prefHeight="131.0" prefWidth="113.0" />
-                  <VBox layoutX="342.0" layoutY="444.0" prefHeight="23.0" prefWidth="100.0">
+                  <VBox layoutX="342.0" layoutY="434.0" prefHeight="35.0" prefWidth="100.0">
                      <children>
-                        <Label fx:id="nameplayer2" textFill="#433d32" translateX="29.0" translateY="1.0">
+                        <Button fx:id="nameplayer1" mnemonicParsing="false" prefHeight="8.0" prefWidth="62.0" style="-fx-background-color: #F8F0E7;" textFill="#433d32" translateX="9.0" translateY="7.0">
                            <font>
                               <Font name="Cochin" size="8.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </VBox>
-                  <VBox layoutX="161.0" layoutY="447.0" prefHeight="15.0" prefWidth="62.0" translateX="8.0" translateY="-4.0">
+                  <VBox layoutX="143.0" layoutY="447.0" prefHeight="15.0" prefWidth="67.0" translateX="8.0" translateY="-4.0">
                      <children>
-                        <Label fx:id="nameplayer1" prefHeight="17.0" prefWidth="62.0" text="PLAYER1" textFill="#433d32">
+                        <Button fx:id="nameplayer2" mnemonicParsing="false" prefHeight="15.0" prefWidth="62.0" style="-fx-background-color: #F8F0E7;" textFill="#433d32">
                            <font>
                               <Font name="Cochin" size="8.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </VBox>
                </children>

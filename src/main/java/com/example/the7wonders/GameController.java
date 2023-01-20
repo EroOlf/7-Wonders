@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -48,6 +50,13 @@ public class GameController {
     private static int currentPlayer = 0;
     private static final int nbPlayers = Game.getContext().getNbPlayers();
     private static List<Player> players = Game.getContext().getPlayers();
+
+
+    @FXML
+    private static Button nameplayer1;
+
+    @FXML
+    private static Button nameplayer2;
 
     @FXML
     private ImageView imageViewCentralDeck = new ImageView();
@@ -100,7 +109,9 @@ public class GameController {
             // Récupérer le nom des joueurs et l'afficher sur le plateau
 
             // Afficher les meveilles en construction
-            p.getWonder();
+            for (Button button : Arrays.asList(nameplayer1, nameplayer2)) {
+                button.setText(p.getName());
+            }
             System.out.println(p.getWonder().getName());
             //Afficher les pioches
             p.getWonderDeck();
@@ -119,6 +130,14 @@ public class GameController {
             ImageView imageViewCard = new ImageView(imageCard);
             root.getChildren().add(imageViewCard);
         }
+    }
+
+    public static void setNameplayer2(Button nameplayer2) {
+        GameController.nameplayer2 = nameplayer2;
+    }
+
+    public static void setNameplayer1(Button nameplayer1) {
+        GameController.nameplayer1 = nameplayer1;
     }
 
     public void centralDeckClick(ActionEvent actionEvent) {
