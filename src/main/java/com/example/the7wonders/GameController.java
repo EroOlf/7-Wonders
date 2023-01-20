@@ -47,7 +47,9 @@ public class GameController {
     private static List<Player> players = Game.getContext().getPlayers();
 
 
+    @FXML
     private static Button nameplayer1 = new Button();
+    @FXML
     private static Button nameplayer2 = new Button();
 
     @FXML
