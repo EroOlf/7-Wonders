@@ -1,4 +1,3 @@
--> Initialiser le joueur et quand il choisit une carte, sa carte va dans son jeu de cartes
-
-
-// Modification dans GameController
+// Faire une classe pour tous les tokens pour pouvoir implémenter les effets
+// SetDisable ne marche pas pour les jetons de science --> Si ça ne marche toujours pas, créer un boolean
+// remplaçant la méthode

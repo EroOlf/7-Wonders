@@ -8,13 +8,12 @@ import java.util.List;
 public class ProgressTokens extends Tokens{
 
 	private static List<ProgressToken> progressTokens;
-	
-	// there is 1 token of each type, and 2 tokens of the same 'Culture' type
 
 	public ProgressTokens(){
 		progressTokens = createTokenList();
 	}
 
+	// there is 1 token of each type, and 2 tokens of the same 'Culture' type
 	private static List<ProgressToken> createTokenList() {
 		List<ProgressToken> res = new ArrayList<>();
 		res.addAll(Arrays.asList(ProgressToken.values()));

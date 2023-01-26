@@ -38,11 +38,6 @@ public class GameController {
     @FXML
     private static Label infoLabel = new Label();
 
-    @FXML
-    private static Label nameplayer1;
-    @FXML
-    private static Label nameplayer2;
-
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
     private static List<CardType> centralDeck = new ArrayList<>();
@@ -65,6 +60,8 @@ public class GameController {
     private ImageView ImageViewLeftNeighbor = new ImageView();
     @FXML
     private ImageView imageScienceToken = new ImageView();
+    @FXML
+    private static Button buttonScienceToken = new Button();
 
     //atribut name dans le player
 
@@ -157,14 +154,14 @@ public class GameController {
     }
 
     public void scienceTokenDeckClick(ActionEvent actionEvent){
-        // Récupérer la liste des tokens
         // Récupérer le 1er de la liste
         ProgressToken pT = Game.getContext().getTable().getTokens().getProgressTokens().get(0);
         Image imageScience = new Image(String.valueOf(HelloApplication.class.getResource(pT.imageResource)));
         imageScienceToken.setImage(imageScience);
         Game.getContext().getTable().getTokens().getProgressTokens().remove(0);
-        // Le retirer
         // Attribuer le token et son effet au joueur
+        // Désactiver le bouton
+        buttonScienceToken.setDisable(true);
     }
 
     private static void nextPlayer(){
@@ -177,6 +174,7 @@ public class GameController {
 
     private static void enablePickToken(){
         //Activer le bouton de pioche token
+        buttonScienceToken.setDisable(false);
     }
 
     private static void giveResources(CardType card){

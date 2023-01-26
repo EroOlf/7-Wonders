@@ -241,7 +241,7 @@
                         <Font size="8.0" />
                      </font>
                   </Button>
-                  <Button layoutX="409.0" layoutY="24.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a63881" onAction="#scienceTokenDeckClick">
+                  <Button fx:id="buttonScienceToken" layoutX="409.0" layoutY="24.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" text="pioche" textFill="#a63881" onAction="#scienceTokenDeckClick">
                      <font>
                         <Font size="8.0" />
                      </font>
