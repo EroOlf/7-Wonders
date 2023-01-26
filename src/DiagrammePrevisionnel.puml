@@ -79,8 +79,8 @@ ProgressTokens --|> Tokens
 
 package wonder{
     class Piece
-    enum Wonder
     class WonderClass
+    enum Wonder
     WonderClass --> Piece
     Wonder --> WonderClass
 }

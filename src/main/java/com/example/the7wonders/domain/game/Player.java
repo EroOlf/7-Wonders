@@ -3,9 +3,7 @@ package com.example.the7wonders.domain.game;
 import com.example.the7wonders.domain.cards.*;
 import com.example.the7wonders.domain.wonder.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Player {
 
@@ -15,6 +13,7 @@ public class Player {
     private int laurelCount = 0;
     private int shieldCount = 0;
     HashMap<Material, Integer> materials;
+    HashMap<ScienceCategory, Integer> scienceTokens;
     private List<CardType> cards;
     // A remplacer par WonderClass et donc suppr wonderDeck
     private WonderClass wonder;
@@ -28,6 +27,18 @@ public class Player {
         cards.add(CardType.CardMaterialWood);
         cards.add(CardType.CardScienceLaw);
         this.wonder = wonder;
+        initMaterials();
+        initScience();
+    }
+
+    private void initScience(){
+        this.scienceTokens = new HashMap<>();
+        scienceTokens.put(ScienceCategory.Architect, 0);
+        scienceTokens.put(ScienceCategory.Law, 0);
+        scienceTokens.put(ScienceCategory.Mechanic, 0);
+    }
+
+    private void initMaterials(){
         this.materials = new HashMap<>();
         materials.put(Material.Brick, 0);
         materials.put(Material.Glass, 0);
@@ -35,7 +46,6 @@ public class Player {
         materials.put(Material.Paper, 0);
         materials.put(Material.Stone, 0);
         materials.put(Material.Wood, 0);
-        //initializeWonderDeck();
     }
 
     public String getName(){
@@ -45,7 +55,6 @@ public class Player {
     public WonderClass getWonder() {
         return wonder;
     }
-
     public void setVoisinDroite(Player p){
         voisinDroite = p;
     }
@@ -75,7 +84,46 @@ public class Player {
         this.materials.replace(mat, oldVal+nbMaterial);
     }
 
+    public void setScienceTokens(ScienceCategory sc, int s){
+        int oldVal = this.scienceTokens.get(sc);
+        this.scienceTokens.replace(sc, oldVal+s);
+    }
+
     public HashMap<Material, Integer> getMaterials() {
         return materials;
     }
+
+    /**
+     * Vérifie si le player peut choisir un jeton de science selon les règles du jeu :
+     * - S'il possède 2 symboles scientifiques identiques
+     * - S'il possède 3 symboles scientifiques différents
+     * @return true si le player peut choisir un token, false sinon
+     */
+    public boolean couldChooseToken(){
+        int rscIdentical = 2;
+        int rscDiff = 3;
+        int rscPlayerDiff = 0;
+        Iterator it = scienceTokens.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<ScienceCategory, Integer> entry = (Map.Entry)it.next();
+            if(entry.getValue() >= rscIdentical){
+                // Retirer les cartes
+                scienceTokens.replace(entry.getKey(), 0);
+                return true;
+            }else{
+                if(entry.getValue() >= 1){
+                    rscPlayerDiff++;
+                }
+            }
+        }
+        if(rscPlayerDiff >= rscDiff){
+           setScienceTokens(ScienceCategory.Law, -1);
+           setScienceTokens(ScienceCategory.Architect, -1);
+           setScienceTokens(ScienceCategory.Mechanic, -1);
+           return true;
+        }
+        return false;
+    }
+
+
 }
