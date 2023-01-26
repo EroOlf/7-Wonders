@@ -156,8 +156,6 @@ public class InitializationController {
                     validationButton.getStyleClass().add("validationButton");
                     validationButton.setFocusTraversable(true);
                     validationButton.setOnMouseClicked(mouseEvent -> validationButton.requestFocus());
-
-
                 }
             }
 
