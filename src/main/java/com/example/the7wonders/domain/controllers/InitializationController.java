@@ -52,7 +52,7 @@ public class InitializationController {
     @FXML
     private VBox rootVBox;
 
-    private static int currentNbPlayer = 0;
+    private static int currentNbPlayer = 1;
     private static final int nbPlayer = Game.getContext().getNbPlayers();
     private static Wonder wonder;
 

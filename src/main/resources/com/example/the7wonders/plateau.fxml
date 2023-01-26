@@ -4,6 +4,26 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.the7wonders.GameController">
    <children>
@@ -151,7 +171,7 @@
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="214.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="216.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
@@ -166,7 +186,7 @@
                         <Image url="@images/tokens/token-conflict-war.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="245.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="242.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/tokens/token-conflict-peace.png" />
                      </image>
@@ -284,6 +304,11 @@
                   <ImageView fitHeight="21.0" fitWidth="66.0" layoutX="610.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                      <image>
                         <Image url="@images/backgrounds/encadrénom.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView1" fitHeight="49.0" fitWidth="43.0" layoutX="231.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/cards/card-back/card-back-question.png" />
                      </image>
                   </ImageView>
                   <Pane fx:id="imageContainer" layoutX="177.0" layoutY="94.0" prefHeight="131.0" prefWidth="113.0" />

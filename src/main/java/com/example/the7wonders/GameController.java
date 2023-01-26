@@ -1,6 +1,4 @@
 package com.example.the7wonders;
-
-
 import com.example.the7wonders.domain.game.Game;
 import com.example.the7wonders.domain.game.Player;
 import com.example.the7wonders.domain.cards.*;
@@ -15,13 +13,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.*;
-import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,14 +24,13 @@ import java.util.List;
 
 
 import static com.example.the7wonders.HelloApplication.stage;
-import static com.example.the7wonders.domain.cards.CardType.*;
 
 public class GameController {
     // Pour l'instant juste afficher les merveilles
     @FXML
-    private static FlowPane root = new FlowPane();
+    private static final FlowPane root = new FlowPane();
     @FXML
-    private static Label infoLabel = new Label();
+    private static final Label infoLabel = new Label();
 
     private static List<CardType> leftDeck;
     private static List<CardType> playerDeck;
@@ -44,13 +38,14 @@ public class GameController {
 
     private static int currentPlayer = 0;
     private static final int nbPlayers = Game.getContext().getNbPlayers();
-    private static List<Player> players = Game.getContext().getPlayers();
+    private static final List<Player> players = Game.getContext().getPlayers();
 
 
     @FXML
     private static Button nameplayer1 = new Button();
     @FXML
     private static Button nameplayer2 = new Button();
+
 
     @FXML
     private ImageView imageViewCentralDeck = new ImageView();
@@ -59,11 +54,33 @@ public class GameController {
     @FXML
     private ImageView ImageViewLeftNeighbor = new ImageView();
     @FXML
+    private ImageView imageView1 = new ImageView();
+    @FXML
     private ImageView imageScienceToken = new ImageView();
     @FXML
     private static Button buttonScienceToken = new Button();
 
+
     //atribut name dans le player
+
+
+
+    private void setRessources(CardType type) {
+        //CardType card = centralDeck.get(0);
+        //String imageResource1 = type.imageResource;
+
+        Image Ressource1 = new Image(String.valueOf(HelloApplication.class.getResource(type.imageResource)));
+        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
+        imageView1.setImage(Ressource1);
+        centralDeck.remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
+
+
+       // String Ressource = type.imageResource;
+        //mageView1.setImage(Ressource);
+       // imageView.setImage(new Image(imageResource));
+        //imageView1.setImage(new Image(String.valueOf(HelloApplication.class.getResource("images/cards/card-back/card-back.png"))));
+    }
 
     public static void initializeGame()  {
         //public void onHelloButtonClick(ActionEvent event) {
@@ -94,6 +111,7 @@ public class GameController {
         }
         // Initialiser les joueurs
         displayPlayers();
+
         // Intialiser le deck central
         //displayCentralDeck();
         // Initialiser les jetons
@@ -102,10 +120,10 @@ public class GameController {
 
     private static void displayPlayers(){
         for(Player p : players){
+
             // Récupérer le nom des joueurs et l'afficher sur le plateau
 
             // Afficher les meveilles en construction
-            System.out.println("ate");
             for (Button button : Arrays.asList(nameplayer1, nameplayer2)) {
                 button.setText(p.getName());
             }
@@ -129,29 +147,47 @@ public class GameController {
         }
     }
 
+
     public void centralDeckClick(ActionEvent actionEvent) {
+
+    //public void centralDeckClick() {
+
         CardType card = centralDeck.get(0);
         Image imageCentralDeckCard = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
-        System.out.println(String.valueOf(HelloApplication.class.getResource(centralDeck.get(0).imageResource)));
+        System.out.println(HelloApplication.class.getResource(centralDeck.get(0).imageResource));
         imageViewCentralDeck.setImage(imageCentralDeckCard);
         centralDeck.remove(0);
+
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
+        nextPlayer();
+        setRessources(card);
+
     }
 
-    public void playerDeckClick(ActionEvent actionEvent){
+    public void playerDeckClick(){
         CardType card = players.get(currentPlayer).getWonderDeck().get(0);
         Image imagePlayerDeck = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         imageViewPlayerDeck.setImage(imagePlayerDeck);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
+
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
+        nextPlayer();
+        setRessources(card);
     }
 
-    public void NeighborLeftDeckClick(ActionEvent actionEvent){
+    public void NeighborLeftDeckClick(){
         CardType card = players.get(currentPlayer).getVoisinGauche().getWonderDeck().get(0);
         Image imageNeighborLeft = new Image(String.valueOf(HelloApplication.class.getResource(card.imageResource)));
         ImageViewLeftNeighbor.setImage(imageNeighborLeft);
         giveResources(card);
         players.get(currentPlayer).getWonderDeck().remove(0);
+        players.get(currentPlayer).getWonder().returnPiece(players.get(currentPlayer));
+        nextPlayer();
+        setRessources(card);
+
     }
+
 
     public void scienceTokenDeckClick(ActionEvent actionEvent){
         // Récupérer le 1er de la liste
@@ -198,7 +234,7 @@ public class GameController {
         nextPlayer();
     }
 
-    public void onExitButtonAction(ActionEvent actionEvent) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+    public void onExitButtonAction() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage = stage;
@@ -206,7 +242,7 @@ public class GameController {
         stage.setTitle("7 Wonders Architects");
         stage.setScene(scene);
         stage.show();
-    }
+    }}
 
 
     /*public class DisplayCardImageController {
@@ -307,5 +343,3 @@ public class GameController {
             Pane.add(new JLabel(imageIcon));
             Pane.revalidate();
             Pane.repaint();*/
-
-}
