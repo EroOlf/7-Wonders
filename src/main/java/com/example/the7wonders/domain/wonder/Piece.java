@@ -50,11 +50,13 @@ public class Piece {
             while(it.hasNext()){
                 Map.Entry<Material, Integer> entry = (Map.Entry)it.next();
                 int resourcePlayers = entry.getValue();
-                if(nbRessources >= resourcePlayers){
+                if(nbRessources >= resourcePlayers && entry.getValue() >= nbRessources){
                     // Construire la carte
 
                     // Supprimer les matériaux des players
-                    pl.setMaterials(entry.getKey(), entry.setValue(resourcePlayers - nbRessources));
+                    pl.setMaterials(entry.getKey(), -nbRessources);
+                    //System.out.println(entry.setValue(resourcePlayers - nbRessources));
+                    System.out.println(-nbRessources);
                     pl.setLaurelCount(nbGloire);
                     return true;
                 }
@@ -75,10 +77,13 @@ public class Piece {
                 pl.setLaurelCount(nbGloire);
                 Iterator it2 = materials.entrySet().iterator();
                 resourcesDiff = 0;
-                while(it.hasNext() && nbRessources > resourcesDiff){
-                    Map.Entry<Material, Integer> entry2 = (Map.Entry)it.next();
-                    pl.setMaterials(entry2.getKey(), entry2.getValue() -  1);
-                    resourcesDiff++;
+                while(it2.hasNext() && nbRessources > resourcesDiff){
+                    Map.Entry<Material, Integer> entry2 = (Map.Entry)it2.next();
+                    if(entry2.getValue() > 0){
+                        pl.setMaterials(entry2.getKey(),  -1);
+                        resourcesDiff++;
+                        System.out.println(entry2.getKey());
+                    }
                 }
                 return true;
             }

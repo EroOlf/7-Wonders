@@ -89,6 +89,10 @@ public class Player {
         this.scienceTokens.replace(sc, oldVal+s);
     }
 
+    public HashMap<ScienceCategory, Integer> getScienceTokens() {
+        return scienceTokens;
+    }
+
     public HashMap<Material, Integer> getMaterials() {
         return materials;
     }

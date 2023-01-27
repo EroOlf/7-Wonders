@@ -51,14 +51,6 @@ public class Game {
         System.out.println(wonder.getName());
         try{
             players.add(new Player(name, wonder));
-            System.out.println(players.get(0).getWonder().getName());
-           /* switch(wonder.frenchName){
-                case "Alexandrie":
-                    players.add(new Player(name, new Alexandrie(wonder)));
-                    break;
-                default :
-                    System.out.println("N'existe pas");
-            }*/
         } catch(Exception e){
             System.out.println("Pb avec le player");
         }

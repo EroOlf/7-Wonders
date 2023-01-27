@@ -12,8 +12,8 @@ public class Table {
     // Deck central
     private List<CardType> centralDeck;
     private ProgressTokens tokens = new ProgressTokens();
-    /*private final int nbConflictTockens = 4;
-    private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
+    private final int nbConflictTockens = 4;
+    /*private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
     private int cornCount = 0;
     //Chaaaaaaaaat
 
@@ -42,7 +42,11 @@ public class Table {
     }
 
     public void setCornCount(int corn){
-        this.cornCount += corn;
+        if(nbConflictTockens > this.cornCount+corn){
+            this.cornCount = corn;
+        }else{
+            this.cornCount += corn;
+        }
     }
 
 
