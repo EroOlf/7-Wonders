@@ -25,6 +25,13 @@ public class HelloController {
     private Slider nbPlayersSlider;
     @FXML
     private VBox rootVBox;
+
+    /**
+     * Lors du click sur le bouton de validation, la page permettant au joueur de choisir sa merveille et son nom
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException
+     * @throws IOException
+     */
     @FXML
     public void onHelloButtonClick() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         Game.getContext().setNbPlayers(Integer.parseInt(welcomeText.getText()));
@@ -32,6 +39,9 @@ public class HelloController {
 
     }
 
+    /**
+     * Méthode d'initialisation pour le slider permettant de choisir le nombre de joueurs
+     */
     @FXML
     public void initialize(){
         nbPlayersSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
@@ -39,6 +49,9 @@ public class HelloController {
         });
     }
 
+    /**
+     * Lors du click sur le bouton exit, le jeu se ferme
+     */
     @FXML
     protected void onExitButton(){
         Stage stage = (Stage) rootVBox.getScene().getWindow();

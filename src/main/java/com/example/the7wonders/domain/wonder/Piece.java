@@ -44,6 +44,12 @@ public class Piece {
         return nbGloire;
     }
 
+    /**
+     * Vérifie si un player peut construire une pièce de sa merveille
+     * @param materials : les matériaux du player
+     * @param pl : le player
+     * @return true si une pièce peut être construite, false sinon
+     */
     public boolean constructPiece(HashMap<Material, Integer> materials, Player pl){
         if(mustBeIdentical){
             Iterator it = materials.entrySet().iterator();
@@ -56,7 +62,7 @@ public class Piece {
                     // Supprimer les matériaux des players
                     pl.setMaterials(entry.getKey(), -nbRessources);
                     //System.out.println(entry.setValue(resourcePlayers - nbRessources));
-                    System.out.println(-nbRessources);
+
                     pl.setLaurelCount(nbGloire);
                     return true;
                 }
@@ -82,7 +88,6 @@ public class Piece {
                     if(entry2.getValue() > 0){
                         pl.setMaterials(entry2.getKey(),  -1);
                         resourcesDiff++;
-                        System.out.println(entry2.getKey());
                     }
                 }
                 return true;

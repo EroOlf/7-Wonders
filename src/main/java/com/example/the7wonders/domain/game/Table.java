@@ -13,9 +13,9 @@ public class Table {
     private List<CardType> centralDeck;
     private ProgressTokens tokens = new ProgressTokens();
     private final int nbConflictTockens = 4;
-    /*private ConflictTokens[] conflictTokens = new ConflictTokens[nbConflictTockens];*/
+
     private int cornCount = 0;
-    //Chaaaaaaaaat
+
 
     public static Table getTable(){
         return table;
@@ -48,7 +48,6 @@ public class Table {
             this.cornCount += corn;
         }
     }
-
 
     private void shuffle(){
         Collections.shuffle(tokens.getProgressTokens());

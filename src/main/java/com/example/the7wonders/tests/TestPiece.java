@@ -12,6 +12,9 @@ import static org.junit.Assert.*;
 
 public class TestPiece {
 
+    /**
+     * Teste si un joueur peut construire les étapes de sa merveille
+     */
     @Test
     public void testConstructPieceAlexandrie(){
         Player p;

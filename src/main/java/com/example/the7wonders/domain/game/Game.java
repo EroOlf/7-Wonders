@@ -19,6 +19,12 @@ public class Game {
 
     private Game(){}
 
+    /**
+     * Lance le jeu
+     * @throws UnsupportedAudioFileException
+     * @throws IOException
+     * @throws LineUnavailableException
+     */
     public static void play() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
         context = new Game();
         File mp3File = new File("7Wondersmusic.wav");
@@ -47,6 +53,11 @@ public class Game {
         return table;
     }
 
+    /**
+     * Création d'un joueur
+     * @param name : le nom du joueur
+     * @param wonder : la merveille choisie par le joueur
+     */
     public void createPlayers(String name, WonderClass wonder){
         System.out.println(wonder.getName());
         try{
@@ -56,6 +67,9 @@ public class Game {
         }
     }
 
+    /**
+     * Associer les voisins du joueur
+     */
     public void associateNeighbors(){
         for(int i = 0; i < players.size(); ++i){
             players.get(i).setVoisinDroite(i + 1 < players.size() ? players.get(i+1) : players.get(0));
@@ -63,6 +77,9 @@ public class Game {
         }
     }
 
+    /**
+     * Mélanger les cartes
+     */
     public void shuffleCentralDeck(){
         Collections.shuffle(table.getCentralDeck());
     }
@@ -73,4 +90,6 @@ public class Game {
         // Si on mélange le deck de tout le monde, pas besoin de le faire pour le voisin de gauche
         Collections.shuffle(p.getWonderDeck());
     }
+
+
 }

@@ -23,7 +23,6 @@ public class TestPlayer {
         return p;
     }
 
-
     @Test
     public void testSetMaterial(){
         Player p = intialization();
